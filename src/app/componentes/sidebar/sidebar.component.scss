@@ -1,0 +1,80 @@
+.sidebar {
+
+    background-color: var(--container-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 5rem;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+    .active {
+        background-color: var(--background-color);
+    }
+
+    #rpgIcon {
+        height: 3rem;
+        width: 3rem;
+        margin-bottom: 5rem;
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+    }
+
+    .btn-aba {
+
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 6px;
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        span {
+            display: none;
+        }
+
+    }
+
+    .btn-aba:hover {
+        cursor: pointer;
+        background-color: var(--background-color);
+    }
+
+}
+
+.sidebar:hover {
+    width: 11rem;
+
+    #rpgIcon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-aba {
+        padding-left: 8px;
+        padding-right: 8px;
+        justify-content: flex-start;
+        width: 8rem;
+
+        span {
+            margin-left: 1rem;
+            color: var(--default-font-color);
+            font-style: var(--default-font-family);
+            display: block;
+            transition: all ease 2.3s;
+        }
+    }
+}

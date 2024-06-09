@@ -1,0 +1,70 @@
+div {
+    position: relative;
+    background-color: var(--container-color);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    margin-right: 1.5rem;
+    border: 1px solid #d4af37;
+    border-radius: 10px;
+
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--container-color);
+    border-radius: 30px;
+    border: 1px solid #d4af37;
+  }
+
+  .nomeAtributo{
+    top: -1rem;
+    height: 1.5rem;
+    width: 3.5rem;
+  }
+
+  .atributo {
+    bottom: -1rem;
+    width: 3rem;
+    border-radius: 30px;
+    input {
+      text-align: center;
+      font-size: 14px;
+      width: 2rem;
+      height: 2rem;
+      background-color: transparent;
+      border: none;
+    }
+  }
+    .sigla {
+        font-family: var(--default-font-family);
+        color: var(--default-font-color);
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .sigla:hover {
+        color: #f75a68;
+        cursor: pointer;
+    }
+
+    .valor {
+        font-family: var(--default-font-family);
+        color: var(--default-font-color);
+        margin: unset;
+        font-size: 24px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .modificador {
+        cursor: pointer;
+    }
+
+}

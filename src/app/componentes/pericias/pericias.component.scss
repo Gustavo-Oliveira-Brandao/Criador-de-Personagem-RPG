@@ -1,0 +1,62 @@
+.card {
+  margin-left: 2rem;
+  width: 15rem;
+  padding: 1rem;
+  background-color: var(--container-color);
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    font-family: var(--default-font-family);
+    color: var(--default-font-color);
+    margin-top: 0;
+  }
+
+  .pericia {
+    height: 1.69rem;
+    align-items: center;
+
+    .valor {
+      font-size: 14px;
+      width: 2rem;
+    }
+
+    select {
+      font-family: var(--default-font-family);
+      color: var(--default-font-color);
+      border: none;
+      background-color: var(--container-color);
+      margin-right: 0.5rem;
+      font-size: 14px;
+    }
+
+    p {
+      margin: unset;
+      color: var(--default-font-color);
+      font-family: var(--default-font-family);
+    }
+
+    button {
+      border: none;
+      font-size: 14px;
+      background-color: transparent;
+      color: var(--default-font-color);
+      font-family: var(--default-font-family);
+    }
+
+    select:hover {
+      cursor: pointer;
+      color: #f75a68;
+    }
+
+    button:hover {
+      color: #f75a68;
+      cursor: pointer;
+    }
+
+    display: flex;
+  }
+}

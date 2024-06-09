@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #2b2d42;
+    --container-color: #202024;
+    --default-font-color: #fff;
+    --default-font-family: "Inter", sans-serif;
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    background-color: var(--background-color);
+}
