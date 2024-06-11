@@ -7,48 +7,68 @@ export class StatsPersonagemService {
 
   constructor() { }
 
+
+  status: any =
+  [
+    {
+      id: 'vida',
+      vidaMaxima: 100,
+      vidaAtual: 100,
+      vidaTemporaria: 0,
+      porcentagemVidaAtual : 50,
+    },
+    {
+      id: 'classeArmadura',
+      valor: 10
+    },
+    {
+      id: 'deslocamento',
+      valor: 30,
+    }
+  ]
+
   atributos:any =
   [
     {
       id: 'forca',
       valor: 10,
       modificador: 0,
-      sigla: 'For',
+      sigla: 'FOR',
       texto: 'Força'
     },
     {
       id: 'destreza',
       valor: 10,
       modificador: 0,
-      sigla: 'Des',
+      sigla: 'DES',
       texto: 'Destreza'
     },
     {
       id: 'constituicao',
       valor: 10,
       modificador: 0,
-      sigla: 'Con',
+      sigla: 'CON',
       texto: 'Constituição'
     },
     {
       id: 'inteligencia',
       valor: 10,
       modificador: 0,
-      sigla: 'Int',
+      sigla: 'INT',
       texto: 'Inteligência'
     },
     {
       id: 'sabedoria',
       valor: 10,
       modificador: 0,
-      sigla: 'Sab',
+      sigla: 'SAB',
       texto: 'Sabedoria'
     },
     {
       id: 'carisma',
       valor: 10,
       modificador: 0,
-      sigla: 'Car',
+      sigla: 'CAR',
       texto: 'Carisma'
     }
   ]
@@ -108,6 +128,7 @@ export class StatsPersonagemService {
       texto: 'Vontade (Sab)',
     },
   ]
+  
   pericias: any = [
     {
       id: 'acrobacia',
@@ -311,4 +332,5 @@ export class StatsPersonagemService {
       }
     }
   }
+
 }

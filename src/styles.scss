@@ -3,7 +3,9 @@
     --background-color: #2b2d42;
     --container-color: #202024;
     --default-font-color: #fff;
-    --default-font-family: "Inter", sans-serif;
+    --default-font-family: "Poppins", sans-serif;
+    --default-border: 1px solid #d4af37;
+    --barra-de-vida: calc((2 * pi * 85) - ((2 * pi * 85) * 100) / 100);
 }
 
 html{
