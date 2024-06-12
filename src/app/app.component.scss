@@ -2,7 +2,6 @@
     margin-top: 2rem;
     margin-left: 7rem;
     display: flex;
-    justify-content: space-evenly;
 }
 
 app-atributos{
@@ -10,7 +9,9 @@ app-atributos{
     flex-direction: column;
     width: fit-content;
     margin-top: 1rem;
+    margin-right: 2rem;
 }
 
 app-pericias{
+    margin-right: 2rem;
 }

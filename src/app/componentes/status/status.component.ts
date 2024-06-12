@@ -16,7 +16,8 @@ export class StatusComponent {
 
   alterarVida(){
     console.log(this.StatsPersonagemService.status.porcentagemVidaAtual)
-    const calculo = 'calc((2 * pi * 85) - ((2 * pi * 85) * ' + this.StatsPersonagemService.status[0].porcentagemVidaAtual + ') / 100)'
+    const calculo = 'calc((2 * pi * 89) - ((2 * pi * 89) * ' + this.StatsPersonagemService.status[0].porcentagemVidaAtual + ') / 100)'
     this.vida.nativeElement.style.setProperty('--barra-de-vida', calculo)
   }
+
 }

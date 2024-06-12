@@ -15,7 +15,7 @@ export class StatsPersonagemService {
       vidaMaxima: 100,
       vidaAtual: 100,
       vidaTemporaria: 0,
-      porcentagemVidaAtual : 50,
+      porcentagemVidaAtual : 75,
     },
     {
       id: 'classeArmadura',
