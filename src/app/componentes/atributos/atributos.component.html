@@ -1,13 +1,13 @@
 @for (atributo of StatsPersonagemService.atributos; track $index){
-<div id="{{atributo.id}}">
-    <span class="nomeAtributo">
+<div id="{{atributo.id}}" class="container">
+    <span class="container nomeAtributo">
         <p class="sigla">{{ atributo.texto }}</p>
     </span>
 
     <p class="modificador valor">{{
         atributo.modificador }}</p>
 
-    <span (change)="StatsPersonagemService.atualizarAtributos()" class="atributo">
+    <span (change)="StatsPersonagemService.atualizarAtributos()" class="container atributo">
         <input class="valor" [(ngModel)]="atributo.valor">
     </span>
 </div>

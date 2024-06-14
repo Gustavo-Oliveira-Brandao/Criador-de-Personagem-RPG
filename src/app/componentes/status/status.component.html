@@ -1,17 +1,15 @@
 <div class="container">
     <div class="personagem">
-    <h2>Ragnar Lognar</h2>
-    <h3>Guerreiro humano</h3>
-    <h3>Nivel 1</h3>
-    <div class='personagem-status'>
-        <img class='foto' src="/assets/Character.jpg" alt="Foto do personagem" />
-        <svg width="250" height="250">
-            <circle class="animacao" #vida cx="125" cy="125" r="89"></circle>
-        </svg>
-        <div class='overlay'>
-            <p>Vida atual</p>
-            <p>{{ StatsPersonagemService.status[0].vidaAtual + '/' + StatsPersonagemService.status[0].vidaMaxima }}</p>
+        <app-foto-personagem />
+        <div class='personagem-status'>
+            <div class="defesa-deslocamento">
+                <label>Classe de armadura</label>
+                <input type="text" class="input-defesa" id="input-ca" name="CA" [(ngModel)]="StatsPersonagemService.status[1].valor" />
+            </div>
+            <div class="deslocamento">
+                <p>Deslocamento</p>
+                <p>{{ StatsPersonagemService.status[2].valor }} pés</p>
+            </div>
         </div>
     </div>
-</div>
 </div>

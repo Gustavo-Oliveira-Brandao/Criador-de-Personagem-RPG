@@ -1,10 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { StatsPersonagemService } from '../../shared/servicos/stats-personagem.service';
+import { FotoPersonagemComponent } from '../foto-personagem/foto-personagem.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [],
+  imports: [FotoPersonagemComponent, FormsModule],
   templateUrl: './status.component.html',
   styleUrl: './status.component.scss'
 })

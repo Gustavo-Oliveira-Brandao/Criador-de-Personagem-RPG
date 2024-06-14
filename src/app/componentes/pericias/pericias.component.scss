@@ -1,22 +1,19 @@
 .card {
   width: 15rem;
   padding: 1rem;
-  background-color: var(--container-color);
-  border: var(--default-border);
   border-radius: 10px;
   margin-bottom: 2rem;
 
   h2 {
     font-size: 20px;
     text-align: center;
-    font-family: var(--default-font-family);
-    color: var(--default-font-color);
     margin-top: 0;
   }
 
   .pericia {
-    height: 1.69rem;
+    height: 1.692rem;
     align-items: center;
+    display: flex;
 
     .valor {
       font-size: 14px;
@@ -24,8 +21,6 @@
     }
 
     select {
-      font-family: var(--default-font-family);
-      color: var(--default-font-color);
       border: none;
       background-color: var(--container-color);
       margin-right: 0.5rem;
@@ -34,16 +29,12 @@
 
     p {
       margin: unset;
-      color: var(--default-font-color);
-      font-family: var(--default-font-family);
     }
 
     button {
       border: none;
       font-size: 14px;
       background-color: transparent;
-      color: var(--default-font-color);
-      font-family: var(--default-font-family);
     }
 
     select:hover {
@@ -56,6 +47,5 @@
       cursor: pointer;
     }
 
-    display: flex;
   }
 }

@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --background-color: #2b2d42;
-    --container-color: #202024;
+    --container-color: rgb(32, 36, 54);
     --default-font-color: #fff;
     --default-font-family: "Poppins", sans-serif;
     --default-border: 1px solid #d4af37;
-    --barra-de-vida: calc((2 * pi * 89) - ((2 * pi * 89) * 100) / 100);
+    --barra-de-vida: calc((2 * pi * 100) - ((2 * pi * 100) * 100) / 100);
 }
 
 html{
@@ -15,4 +15,14 @@ html{
 
 body{
     background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6, p, span, input, select, button{
+    font-family: var(--default-font-family);
+    color: var(--default-font-color);
+}
+
+.container{
+    background-color: var(--container-color);
+    border: var(--default-border);
 }

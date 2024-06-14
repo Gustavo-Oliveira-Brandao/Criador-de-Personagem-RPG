@@ -7,7 +7,7 @@
     height: 100vh;
     width: 5rem;
     transition: all 0.3s ease;
-    z-index: 1;
+    z-index: 99;
 
     .active {
         background-color: var(--background-color);
@@ -68,12 +68,10 @@
         padding-left: 8px;
         padding-right: 8px;
         justify-content: flex-start;
-        width: 8rem;
+        width: 9rem;
 
         span {
             margin-left: 1rem;
-            color: var(--default-font-color);
-            font-style: var(--default-font-family);
             display: block;
             transition: all ease 2.3s;
         }

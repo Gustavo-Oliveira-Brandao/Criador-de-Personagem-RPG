@@ -1,6 +1,5 @@
 div {
     position: relative;
-    background-color: var(--container-color);
     width: 4rem;
     height: 4rem;
     display: flex;
@@ -9,7 +8,6 @@ div {
     justify-content: center;
     padding: 1rem;
     margin-bottom: 2.5rem;
-    border: var(--default-border);
     border-radius: 10px;
 
   span{
@@ -17,9 +15,7 @@ div {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: var(--container-color);
     border-radius: 30px;
-    border: var(--default-border);
   }
 
   .nomeAtributo{
@@ -42,8 +38,6 @@ div {
     }
   }
     .sigla {
-        font-family: var(--default-font-family);
-        color: var(--default-font-color);
         font-size: 10px;
         margin-top: 0;
         margin-bottom: 0;
@@ -55,11 +49,8 @@ div {
     }
 
     .valor {
-        font-family: var(--default-font-family);
-        color: var(--default-font-color);
         margin: unset;
         font-size: 24px;
-        transition: all 0.3s ease-in-out;
     }
 
     .modificador {
