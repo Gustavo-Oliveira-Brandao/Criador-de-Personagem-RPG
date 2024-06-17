@@ -1,33 +1,6 @@
 <div class="container card">
-  <h2>Testes de resistência</h2>
-  @for (resistencia of StatsPersonagemService.resistencias; track $index){
-  <div class="pericia">
-    <select>
-      <option *ngFor="let treinamento of StatsPersonagemService.treinamento">{{ treinamento.grau }}</option>
-    </select>
-    <div class="valor">
-      <p>{{ resistencia.valor }}</p>
-    </div>
-    <div class="nome">
-      <button>{{ resistencia.texto }}</button>
-    </div>
-  </div>
-  }
-</div>
-
-<div class="container card">
   <h2>Pericias</h2>
   @for(pericia of StatsPersonagemService.pericias; track $index){
-  <div class="pericia">
-    <select (change)="StatsPersonagemService.atualizarAtributos()" [(ngModel)]="pericia.grau">
-      <option *ngFor="let treinamento of StatsPersonagemService.treinamento">{{ treinamento.grau }}</option>
-    </select>
-    <div class="valor">
-      <p>{{ pericia.valor }}</p>
-    </div>
-    <div class="nome">
-      <button>{{ pericia.texto }}</button>
-    </div>
-  </div>
+  <app-pericia [pericia]='pericia' [ehPericia]="true" />
   }
 </div>

@@ -1,10 +1,10 @@
 @for (atributo of StatsPersonagemService.atributos; track $index){
 <div id="{{atributo.id}}" class="container">
-    <span class="container nomeAtributo">
+    <span class="nomeAtributo">
         <p class="sigla">{{ atributo.texto }}</p>
     </span>
 
-    <p class="modificador valor">{{
+    <p class="container modificador valor">{{
         atributo.modificador }}</p>
 
     <span (change)="StatsPersonagemService.atualizarAtributos()" class="container atributo">

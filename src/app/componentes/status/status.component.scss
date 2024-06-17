@@ -1,19 +1,28 @@
-.container{
+.status-card {
     border-radius: 20px;
     width: 40rem;
-    height: 16rem;
-    padding-left: 2rem;
+    height: 18rem;
 
-    .personagem{
+    .personagem {
         display: flex;
         flex-direction: row;
         align-items: center;
 
-        .personagem-status{
+        .personagem-status {
 
-            .armadura{
-                background: url('../../../assets/shield.svg') no-repeat;
-                background-size: 5rem;
+            display: flex;
+            flex-direction: row;
+
+            .CA {
+                z-index: 5;
+                background: url("../../../assets/shield.svg") no-repeat;
+                background-size: 100%;
+                background-color: transparent;
+                border: none;
+                text-align: center;
+                font-size: x-large;
+                width: 4rem;
+                height: 4rem;
             }
         }
     }

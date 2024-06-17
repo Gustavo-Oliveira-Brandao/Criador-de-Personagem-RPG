@@ -1,8 +1,15 @@
 <app-sidebar />
 
 <div class="pagina">
-    <app-atributos />
-    <app-pericias />
-    <app-status />
+    <div class="atributos">
+        <app-atributos />
+        <div class="pericias">
+            <div class="esquerda">
+                <app-resistencias />
+                <app-proficiencias />
+            </div>
+            <app-pericias />
+        </div>
+    </div>
 </div>
 <router-outlet />

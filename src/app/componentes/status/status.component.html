@@ -1,14 +1,10 @@
-<div class="container">
+<div class="status-card">
     <div class="personagem">
         <app-foto-personagem />
         <div class='personagem-status'>
             <div class="defesa-deslocamento">
-                <label>Classe de armadura</label>
-                <input type="text" class="input-defesa" id="input-ca" name="CA" [(ngModel)]="StatsPersonagemService.status[1].valor" />
-            </div>
-            <div class="deslocamento">
-                <p>Deslocamento</p>
-                <p>{{ StatsPersonagemService.status[2].valor }} pés</p>
+                <input type="text" class="CA" id="input-ca" name="CA"
+                [(ngModel)]="StatsPersonagemService.status[1].valor" />
             </div>
         </div>
     </div>

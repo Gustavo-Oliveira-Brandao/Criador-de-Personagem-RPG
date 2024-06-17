@@ -7,7 +7,6 @@ div {
     text-align: center;
     justify-content: center;
     padding: 1rem;
-    margin-bottom: 2.5rem;
     border-radius: 10px;
 
   span{
@@ -19,7 +18,7 @@ div {
   }
 
   .nomeAtributo{
-    top: -1rem;
+    top: 0;
     height: 1.5rem;
     width: 4.5rem;
   }
@@ -54,7 +53,14 @@ div {
     }
 
     .modificador {
+        border: 1px solid rgb(53, 58, 83);
         cursor: pointer;
+        width: 3.5rem;
+        border-radius: 6px;
+    }
+    
+    .modificador:hover{
+      background-color: rgb(37, 41, 63);
     }
 
 }

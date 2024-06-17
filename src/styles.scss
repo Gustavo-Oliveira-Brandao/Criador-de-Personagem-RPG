@@ -4,8 +4,8 @@
     --container-color: rgb(32, 36, 54);
     --default-font-color: #fff;
     --default-font-family: "Poppins", sans-serif;
-    --default-border: 1px solid #d4af37;
-    --barra-de-vida: calc((2 * pi * 100) - ((2 * pi * 100) * 100) / 100);
+    --default-border: 1px solid #858585;
+    --barra-de-vida: calc((2 * pi * 68) - ((2 * pi * 68) * 100) / 100);
 }
 
 html{
@@ -17,7 +17,7 @@ body{
     background-color: var(--background-color);
 }
 
-h1, h2, h3, h4, h5, h6, p, span, input, select, button{
+h1, h2, h3, h4, h5, h6, p, span, input, select, button, label{
     font-family: var(--default-font-family);
     color: var(--default-font-color);
 }

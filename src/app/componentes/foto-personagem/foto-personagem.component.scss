@@ -32,14 +32,28 @@
         }
 
         .foto {
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
             border-radius: 100px;
-
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .CA {
+            z-index: 5;
+            background: url("../../../assets/shield.svg") no-repeat;
+            background-size: 100%;
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            font-size: x-large;
+            width: 4rem;
+            height: 4rem;
         }
 
         svg {
@@ -48,9 +62,9 @@
 
             circle {
                 fill: none;
-                stroke: #d62828;
+                stroke: #c92121;
                 stroke-width: 18px;
-                stroke-dasharray: calc(2 * pi * 100);
+                stroke-dasharray: calc(2 * pi * 68);
                 stroke-dashoffset: var(--barra-de-vida);
                 stroke-linecap: butt;
             }
@@ -61,7 +75,7 @@
 
             @keyframes progress {
                 from {
-                    stroke-dashoffset: calc(2 * pi * 100);
+                    stroke-dashoffset: calc(2 * pi * 68);
                 }
             }
         }

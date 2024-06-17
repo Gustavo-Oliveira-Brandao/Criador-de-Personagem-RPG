@@ -1,0 +1,33 @@
+@if(!ehPericia){
+    <div class="pericia">
+        <select (change)="StatsPersonagemService.atualizarAtributos()" [(ngModel)]="resistencia.grau">
+            <option *ngFor="let treinamento of StatsPersonagemService.treinamento">{{ treinamento.grau }}</option>
+        </select>
+        <div class="atributo">
+            <p>{{ resistencia.siglaAtributo }}</p>
+        </div>
+        <div class="nome">
+            <button>{{ resistencia.texto }}</button>
+        </div>
+        <div class="valor">
+            <p>{{ resistencia.valor }}</p>
+        </div>
+    </div>
+}
+
+@if(ehPericia){
+<div class="pericia">
+    <select (change)="StatsPersonagemService.atualizarAtributos()" [(ngModel)]="pericia.grau">
+        <option *ngFor="let treinamento of StatsPersonagemService.treinamento">{{ treinamento.grau }}</option>
+    </select>
+    <div class="atributo">
+        <p>{{ pericia.siglaAtributo }}</p>
+    </div>
+    <div class="nome">
+        <button>{{ pericia.texto }}</button>
+    </div>
+    <div class="valor">
+        <p>{{ pericia.valor }}</p>
+    </div>
+</div>
+}

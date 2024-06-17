@@ -9,69 +9,69 @@ export class StatsPersonagemService {
 
 
   status: any =
-  [
-    {
-      id: 'vida',
-      vidaMaxima: 100,
-      vidaAtual: 100,
-      vidaTemporaria: 0,
-      porcentagemVidaAtual : 75,
-    },
-    {
-      id: 'classeArmadura',
-      valor: 10
-    },
-    {
-      id: 'deslocamento',
-      valor: 30,
-    }
-  ]
+    [
+      {
+        id: 'vida',
+        vidaMaxima: 100,
+        vidaAtual: 100,
+        vidaTemporaria: 0,
+        porcentagemVidaAtual: 75,
+      },
+      {
+        id: 'classeArmadura',
+        valor: 10
+      },
+      {
+        id: 'deslocamento',
+        valor: 30,
+      }
+    ]
 
-  atributos:any =
-  [
-    {
-      id: 'forca',
-      valor: 10,
-      modificador: 0,
-      sigla: 'FOR',
-      texto: 'Força'
-    },
-    {
-      id: 'destreza',
-      valor: 10,
-      modificador: 0,
-      sigla: 'DES',
-      texto: 'Destreza'
-    },
-    {
-      id: 'constituicao',
-      valor: 10,
-      modificador: 0,
-      sigla: 'CON',
-      texto: 'Constituição'
-    },
-    {
-      id: 'inteligencia',
-      valor: 10,
-      modificador: 0,
-      sigla: 'INT',
-      texto: 'Inteligência'
-    },
-    {
-      id: 'sabedoria',
-      valor: 10,
-      modificador: 0,
-      sigla: 'SAB',
-      texto: 'Sabedoria'
-    },
-    {
-      id: 'carisma',
-      valor: 10,
-      modificador: 0,
-      sigla: 'CAR',
-      texto: 'Carisma'
-    }
-  ]
+  atributos: any =
+    [
+      {
+        id: 'forca',
+        valor: 10,
+        modificador: 0,
+        sigla: 'FOR',
+        texto: 'Força'
+      },
+      {
+        id: 'destreza',
+        valor: 10,
+        modificador: 0,
+        sigla: 'DES',
+        texto: 'Destreza'
+      },
+      {
+        id: 'constituicao',
+        valor: 10,
+        modificador: 0,
+        sigla: 'CON',
+        texto: 'Constituição'
+      },
+      {
+        id: 'inteligencia',
+        valor: 10,
+        modificador: 0,
+        sigla: 'INT',
+        texto: 'Inteligência'
+      },
+      {
+        id: 'sabedoria',
+        valor: 10,
+        modificador: 0,
+        sigla: 'SAB',
+        texto: 'Sabedoria'
+      },
+      {
+        id: 'carisma',
+        valor: 10,
+        modificador: 0,
+        sigla: 'CAR',
+        texto: 'Carisma'
+      }
+    ]
 
   treinamento: any = [
     {
@@ -109,7 +109,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'constituicao',
-      texto: 'Fortitude (Con)',
+      texto: 'Fortitude',
+      siglaAtributo: "CON"
     },
     {
       id: 'reflexos',
@@ -117,7 +118,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'destreza',
-      texto: 'Reflexos (Des)',
+      texto: 'Reflexos',
+      siglaAtributo: 'DES'
     },
     {
       id: 'vontade',
@@ -125,10 +127,11 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'sabedoria',
-      texto: 'Vontade (Sab)',
+      texto: 'Vontade',
+      siglaAtributo: "SAB"
     },
   ]
-  
+
   pericias: any = [
     {
       id: 'acrobacia',
@@ -136,7 +139,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'destreza',
-      texto: 'Acrobacia (Des)',
+      texto: 'Acrobacia',
+      siglaAtributo: 'DES'
     },
     {
       id: 'arcanismo',
@@ -144,7 +148,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Arcanismo (Int)',
+      texto: 'Arcanismo',
+      siglaAtributo: 'INT'
     },
 
     {
@@ -153,7 +158,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'forca',
-      texto: 'Atletismo (For)',
+      texto: 'Atletismo',
+      siglaAtributo: 'FOR'
     },
 
     {
@@ -162,7 +168,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'destreza',
-      texto: 'Cavalgar (Des)',
+      texto: 'Cavalgar',
+      siglaAtributo: 'DES'
     },
 
     {
@@ -171,7 +178,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Conhecimento (Int)',
+      texto: 'Conhecimento',
+      siglaAtributo: 'INT'
     },
 
     {
@@ -180,7 +188,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Conhecimento (Int)',
+      texto: 'Conhecimento',
+      siglaAtributo: 'INT'
     },
 
     {
@@ -189,7 +198,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'carisma',
-      texto: 'Diplomacia (Car)',
+      texto: 'Diplomacia',
+      siglaAtributo: 'CAR'
     },
 
     {
@@ -198,7 +208,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'carisma',
-      texto: 'Enganação (Car)',
+      texto: 'Enganação',
+      siglaAtributo: 'CAR'
     },
 
     {
@@ -207,7 +218,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'destreza',
-      texto: 'Furtividade (Des)',
+      texto: 'Furtividade',
+      siglaAtributo: 'DES'
     },
 
     {
@@ -216,7 +228,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'carisma',
-      texto: 'Intimidação (Car)',
+      texto: 'Intimidação',
+      siglaAtributo: 'CAR'
     },
 
     {
@@ -225,7 +238,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'destreza',
-      texto: 'Ladroagem (Des)',
+      texto: 'Ladroagem',
+      siglaAtributo: 'DES'
     },
 
     {
@@ -234,7 +248,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Manufatura (Int)',
+      texto: 'Manufatura',
+      siglaAtributo: 'INT'
     },
 
     {
@@ -243,7 +258,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'sabedoria',
-      texto: 'Medicina (Sab)',
+      texto: 'Medicina',
+      siglaAtributo: 'SAB'
     },
 
     {
@@ -252,7 +268,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'sabedoria',
-      texto: 'Natureza (Sab)',
+      texto: 'Natureza',
+      siglaAtributo: 'SAB'
     },
 
     {
@@ -261,7 +278,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Ocultismo (Int)',
+      texto: 'Ocultismo',
+      siglaAtributo: 'INT'
     },
 
     {
@@ -271,7 +289,8 @@ export class StatsPersonagemService {
       bonusGrau: 0,
       atributo: 'sabedoria',
       passiva: 10,
-      texto: 'Percepção (Sab)',
+      texto: 'Percepção',
+      siglaAtributo: 'SAB'
     },
 
     {
@@ -280,7 +299,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'carisma',
-      texto: 'Perfomance (Car)',
+      texto: 'Perfomance',
+      siglaAtributo: 'CAR'
     },
 
 
@@ -290,7 +310,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'sabedoria',
-      texto: 'Religião (Sab)',
+      texto: 'Religião',
+      siglaAtributo: 'SAB'
     },
 
     {
@@ -299,7 +320,8 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'sabedoria',
-      texto: 'Sobrevivencia (Sab)',
+      texto: 'Sobrevivencia',
+      siglaAtributo: 'SAB'
     },
 
     {
@@ -308,23 +330,46 @@ export class StatsPersonagemService {
       grau: 'D',
       bonusGrau: 0,
       atributo: 'inteligencia',
-      texto: 'Sociedade (Int)',
+      texto: 'Sociedade',
+      siglaAtributo: 'INT'
     },
 
   ];
 
-  atualizarAtributos(){
-    for(let atributo of this.atributos){
+  atualizarAtributos() {
+    for (let atributo of this.atributos) {
       atributo.modificador = Math.trunc((atributo.valor - 10) / 2);
     }
-    for(let pericia of this.pericias){
-      for(let treinamento of this.treinamento){
-        if(pericia.grau === treinamento.grau){
+    this.calcularResistencias();
+    this.calcularPericias();
+  }
+
+  calcularResistencias() {
+    for (let resistencia of this.resistencias) {
+      for (let treinamento of this.treinamento) {
+        if (resistencia.grau === treinamento.grau) {
+          resistencia.bonusGrau = treinamento.valorGrau;
+        }
+      }
+      let index = 0;
+      for (let atributo of this.atributos) {
+        if (resistencia.atributo === atributo.id) {
+          resistencia.valor = this.atributos[index].modificador + resistencia.bonusGrau;
+        }
+        index++;
+      }
+    }
+  }
+
+  calcularPericias() {
+    for (let pericia of this.pericias) {
+      for (let treinamento of this.treinamento) {
+        if (pericia.grau === treinamento.grau) {
           pericia.bonusGrau = treinamento.valorGrau;
         }
       }
       let index = 0;
-      for(let atributo of this.atributos) {
+      for (let atributo of this.atributos) {
         if (pericia.atributo === atributo.id) {
           pericia.valor = this.atributos[index].modificador + pericia.bonusGrau;
         }
