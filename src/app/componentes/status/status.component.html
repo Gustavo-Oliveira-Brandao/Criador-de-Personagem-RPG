@@ -1,10 +1,43 @@
-<div class="status-card">
-    <div class="personagem">
-        <app-foto-personagem />
-        <div class='personagem-status'>
-            <div class="defesa-deslocamento">
-                <input type="text" class="CA" id="input-ca" name="CA"
-                [(ngModel)]="StatsPersonagemService.status[1].valor" />
+<div class="card">
+    <h2 style="margin-top: 0; margin-bottom: 0.5rem;">{{ StatsPersonagemService.info[0].nome }}</h2>
+    <h4 style="margin: 0;">{{ StatsPersonagemService.info[0].raca }} {{ StatsPersonagemService.info[0].classe }}</h4>
+    <h4 style="margin: 0;">Nivel: {{ StatsPersonagemService.info[0].nivel }}</h4>
+    <img src="../../../assets/Character.png" alt="Personagem">
+    <div class="status" style="margin-top: 1.5rem;">
+        <div
+            style="display: flex; flex-direction: column; width: 180px; margin-left: auto; margin-right: auto; cursor: pointer;">
+            <div (click)="abrirAccordion()">
+                <app-barra-vida />
+            </div>
+            @if(accordionEstaAberto){
+            <div id="alterar-vida" class="accordion">
+                <div class="vidaMaxima">
+                    <p>Vida máxima</p>
+                    <input [(ngModel)]="StatsPersonagemService.status[0].vidaMaxima">
+                </div>
+                <div class="button-row">
+                    <input id="valor-vida">
+                    <button (click)="alterarVida(false)"><img src="../../../assets/curar.svg" alt="curar"></button>
+                    <button (click)="alterarVida(true)"><img src="../../../assets/levar-dano.svg" alt="levar dano"></button>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="row">
+            <div class="item">
+                <p>Classe de armadura</p>
+                <div>
+                    <img src="../../../assets/shield.svg" alt="CA" style="outline: none;">
+                    <input [(ngModel)]="StatsPersonagemService.status[1].valor">
+                </div>
+            </div>
+            <div class="item">
+                <p>Deslocamento</p>
+                <div>
+                    <img src="../../../assets/deslocamento.svg" alt="deslocamento" style="outline: none;">
+                    <input [(ngModel)]="StatsPersonagemService.status[2].valor">
+                    <p>pés</p>
+                </div>
             </div>
         </div>
     </div>

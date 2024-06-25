@@ -8,6 +8,15 @@ export class StatsPersonagemService {
   constructor() { }
 
 
+  info: any= [
+    {
+      nome: 'Ragnar Lognar',
+      classe: 'Guerreiro',
+      raca: 'Mashin',
+      nivel: 1
+    }
+  ]
+  
   status: any =
     [
       {
@@ -15,7 +24,7 @@ export class StatsPersonagemService {
         vidaMaxima: 100,
         vidaAtual: 100,
         vidaTemporaria: 0,
-        porcentagemVidaAtual: 75,
+        porcentagemVidaAtual: 100,
       },
       {
         id: 'classeArmadura',

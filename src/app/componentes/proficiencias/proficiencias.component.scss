@@ -5,11 +5,86 @@
     border-radius: 10px;
     margin-right: 1.5rem;
     margin-bottom: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .proficiencia {
+        position: relative;
+    }
+    
+    .delete {
+        position: absolute;
+        right: 0;
+        background-color: #181c2b;
+        border: none;
+        border-radius: 6px;
+        top: 35%;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    button:hover{
+        background-color: #f75a68;
+    }
 
     h2 {
         font-size: 20px;
         text-align: center;
         margin-top: 0;
         margin-bottom: 0.5rem;
+    }
+
+    button{
+        cursor: pointer;
+        background-color: #181c2b;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 6px;
+    }
+
+    .submit{
+        margin-top: 1.5rem;
+        cursor: pointer;
+        background-color: #11122c;
+        width: 6rem;
+        height: 2.5rem;
+    }
+
+    .menu{
+
+        background-color: #181c2b;
+        border-radius: 15px;
+        padding: 1rem;
+        margin-top: 1rem;
+        .titulo{
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+
+        .tipo{
+            margin-left: 1rem;
+            background-color: #181c2b;
+            border: none;
+            width: 8rem;
+            height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .tipo:hover{
+            color: #f75a68;
+        }
+
+        .descricao{
+            margin-left: 1rem;
+            background-color: #181c2b;
+            border: none;
+            border-bottom: 1px solid #fff;
+        }
     }
 }

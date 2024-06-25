@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { StatsPersonagemService } from '../../shared/servicos/stats-personagem.service';
 import { FormsModule } from '@angular/forms';
+
 @Component({
-  selector: 'app-foto-personagem',
+  selector: 'app-barra-vida',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './foto-personagem.component.html',
-  styleUrl: './foto-personagem.component.scss'
+  templateUrl: './barra-vida.component.html',
+  styleUrl: './barra-vida.component.scss'
 })
-export class FotoPersonagemComponent {
+export class BarraVidaComponent {
 
-  
   constructor(protected StatsPersonagemService : StatsPersonagemService){}
-  
 }

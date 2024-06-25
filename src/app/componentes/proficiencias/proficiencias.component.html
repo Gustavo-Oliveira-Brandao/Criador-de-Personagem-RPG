@@ -1,3 +1,29 @@
 <div class="container card">
     <h2>Proficiências</h2>
+    <div class="proficiencias">
+        @for(proficiencia of ProficienciasService.proficiencias; track $index ){
+        <div class="proficiencia">
+            <app-proficiencia [proficiencia]="proficiencia" />
+            <button class="delete" (click)="ProficienciasService.removerProficiencia($index)"><i
+                    class="fa-solid fa-trash"></i></button>
+        </div>
+        }
+    </div>
+    <button (click)="abrirMenu()"><i class="fa-solid fa-plus"></i></button>
+    @if(menuEstaAberto){
+    <div class="menu">
+        <p class="titulo">Adicionar proficiência</p>
+        <div class="row">
+            <p>Tipo: </p>
+            <select class="tipo" id="tipo" [(ngModel)]="default">
+                <option *ngFor="let proficiencia of tiposProficiencia">{{ proficiencia }}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Descrição: </p>
+            <input class="descricao" id="descricao" />
+        </div>
+        <button (click)="ProficienciasService.adicionarProficiencia(); abrirMenu()" class="submit">Adicionar</button>
+    </div>
+    }
 </div>

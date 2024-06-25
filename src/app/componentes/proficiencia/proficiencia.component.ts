@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProficienciasService } from '../../shared/servicos/proficiencias.service';
 
 @Component({
   selector: 'app-proficiencia',
@@ -9,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class ProficienciaComponent {
 
+  constructor(protected ProficienciasService : ProficienciasService){}
+
+  @Input() public proficiencia:any;
 }
