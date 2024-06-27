@@ -14,13 +14,13 @@
         <p class="titulo">Adicionar proficiência</p>
         <div class="row">
             <p>Tipo: </p>
-            <select class="tipo" id="tipo" [(ngModel)]="default">
+            <select class="tipo" id="tipo-proficiencia" [(ngModel)]="default">
                 <option *ngFor="let proficiencia of tiposProficiencia">{{ proficiencia }}</option>
             </select>
         </div>
         <div class="row">
             <p>Descrição: </p>
-            <input class="descricao" id="descricao" />
+            <input class="descricao" id="descricao-proficiencia" />
         </div>
         <app-botao-adicionar [nomeComponente]="'proficiencia'" />
     </div>

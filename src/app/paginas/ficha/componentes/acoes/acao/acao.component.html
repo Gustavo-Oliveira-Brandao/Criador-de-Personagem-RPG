@@ -1,1 +1,12 @@
-<p>acao works!</p>
+<div style="cursor: pointer;" (click)="expandirAcao()" class="acao">
+    <p style="color: #f75a68; margin-top: 0; margin-bottom: 0.5rem; text-transform: uppercase; user-select: none;">{{ acao.nome }}</p>
+
+    <div class="info" style="user-select: none;">
+        <p>Tipo de ação: {{ acao.tipo }}</p>
+        <p>Custo da ação: {{ acao.custo }}</p>
+    </div>
+
+    @if(acaoEstaAberto){
+    <p id="{{index}}" class="descricao">{{ acao.descricao }}</p>
+    }
+</div>

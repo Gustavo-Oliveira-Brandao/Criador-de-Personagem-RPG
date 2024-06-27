@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AtributosComponent } from './paginas/ficha/componentes/atributos/atributos.component';
 import { SidebarComponent } from './shared/componentes/sidebar/sidebar.component';
@@ -7,6 +7,7 @@ import { StatusComponent } from './paginas/ficha/componentes/status/status.compo
 import { CardResistenciasComponent } from './paginas/ficha/componentes/card-resistencias/card-resistencias.component';
 import { ProficienciasComponent } from './paginas/ficha/componentes/proficiencias/proficiencias.component';
 import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.component';
+import { ControleFichaService } from './shared/servicos/controle-ficha.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,14 @@ import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.componen
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'projeto-rpg';
+
+  constructor(protected controleFicha : ControleFichaService){}
+
+  ngOnInit(): void {
+    console.log('ei')
+    this.controleFicha.carregarPersonagem();
+  }
+
 }

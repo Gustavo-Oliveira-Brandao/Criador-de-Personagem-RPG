@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --background-color: #2b2d42;
-    --container-color: rgb(32, 36, 54);
+    --background-color:  rgb(37, 37, 37);
+    --container-color: #1e2124;
+    --secondary-color: #282b30;
     --default-font-color: #fff;
     --default-font-family: "Poppins", sans-serif;
     --default-border: 1px solid #858585;
@@ -28,7 +29,8 @@ span,
 input,
 select,
 button,
-label {
+label,
+textarea {
     font-family: var(--default-font-family);
     color: var(--default-font-color);
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-acao',
@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AcaoComponent {
 
+  acaoEstaAberto: boolean = false;
+
+  expandirAcao(){
+    this.acaoEstaAberto = !this.acaoEstaAberto
+  }
+
+  @Input() public acao:any;
+  @Input() public index:number;
 }

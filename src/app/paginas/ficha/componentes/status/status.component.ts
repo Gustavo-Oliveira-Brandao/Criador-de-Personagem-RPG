@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BarraVidaComponent } from './barra-vida/barra-vida.component';
 import { BarraManaComponent } from './barra-mana/barra-mana.component';
 import { PersonagemService } from '../../../../shared/servicos/personagem.service';
+import { ControleFichaService } from '../../../../shared/servicos/controle-ficha.service';
 
 @Component({
   selector: 'app-status',
@@ -15,7 +16,7 @@ export class StatusComponent {
 
   @ViewChild('vida') vida: ElementRef<HTMLCanvasElement>
 
-  constructor(protected personagem : PersonagemService) { }
+  constructor(protected personagem : PersonagemService, protected controleFicha : ControleFichaService) { }
 
   accordionVidaEstaAberto: boolean = false;
   accordionManaEstaAberto: boolean = false;

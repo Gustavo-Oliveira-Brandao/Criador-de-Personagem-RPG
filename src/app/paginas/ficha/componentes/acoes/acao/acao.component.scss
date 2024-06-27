@@ -1,0 +1,19 @@
+.acao{
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    .info{
+
+        p{
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+    }
+
+    .descricao{
+        width: 100%;
+        font-size: small;
+    }
+}

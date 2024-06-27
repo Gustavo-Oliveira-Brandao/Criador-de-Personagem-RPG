@@ -9,14 +9,13 @@ export class PersonagemService {
 
   info: any =
     {
-      nome: 'Ragnar Lognar',
-      classe: 'Guerreiro',
+      nome: 'Takashi',
+      classe: 'Shinkan',
       raca: 'Mashin',
-      nivel: 10,
-      vidaMaxima: 100,
-      vidaAtual: 100,
+      nivel: 2,
+      vidaMaxima: 0,
+      vidaAtual: 0,
       vidaTemporaria: 0,
-      porcentagemVidaAtual: 100,
       classeArmadura: 10,
       deslocamento: 30,
       honra: 10,
@@ -287,25 +286,34 @@ export class PersonagemService {
 
   ];
 
-  proficiencias: any = [
+  proficiencias: any = []
 
-  ]
+  acoes: any = {
+    habilidadesRaca: [],
 
-  acoes: any = [
+    habilidadesClasse: [],
 
-  ]
+    talentos: [],
 
-  items: any = [
+    ataques: [],
 
-  ]
+    magias: [],
+
+    passivas: []
+  }
+
+
+  items: any = []
+
 
   atualizarAtributos() {
-    console.log(this.info)
     for (let atributo of this.atributos) {
       atributo.modificador = Math.trunc((atributo.valor - 10) / 2);
     }
     this.calcularResistencias();
     this.calcularPericias();
+
+
   }
 
   calcularResistencias() {
@@ -342,8 +350,8 @@ export class PersonagemService {
   }
 
   adicionarProficiencia() {
-    let nome = (<HTMLSelectElement>document.getElementById('tipo'));
-    let descricao = (<HTMLInputElement>document.getElementById('descricao'))
+    let nome = (<HTMLSelectElement>document.getElementById('tipo-proficiencia'));
+    let descricao = (<HTMLInputElement>document.getElementById('descricao-proficiencia'))
 
     let tipo;
     let texto;
@@ -368,11 +376,49 @@ export class PersonagemService {
   }
 
   adicionarAcao() {
-    console.log('teste')
+    let nome = (<HTMLInputElement>document.getElementById('nome-acao'))
+    let custo = (<HTMLSelectElement>document.getElementById('custo-acao'))
+    let tipo = (<HTMLSelectElement>document.getElementById('tipo-acao'))
+    let descricao = (<HTMLInputElement>document.getElementById('descricao-acao'))
+
+    let acao = {
+      nome: '',
+      custo: '',
+      tipo: '',
+      descricao: '',
+    }
+
+    if (nome != null && descricao != null && custo != null && tipo != null) {
+      acao.nome = nome.value
+      acao.descricao = descricao.value
+      acao.custo = custo.value
+      acao.tipo = tipo.value
+
+      if (acao.tipo == "Habilidade de raça") {
+        this.acoes.habilidadesRaca.push(acao)
+      }
+      if (acao.tipo == "Habilidade de classe") {
+        this.acoes.habilidadesClasse.push(acao)
+      }
+      if (acao.tipo == "Talento") {
+        this.acoes.talentos.push(acao)
+      }
+      if (acao.tipo == "Passiva") {
+        this.acoes.passivas.push(acao)
+      }
+      if (acao.tipo == "Ataque") {
+        this.acoes.ataques.push(acao)
+      }
+      if (acao.tipo == "Magia") {
+        this.acoes.magias.push(acao)
+      }
+    } else {
+      alert('Insira as infos!')
+    }
   }
 
   removerAcao(index: number) {
-    console.log('teste')
+    this.acoes.splice(index, 1)
   }
 
   adicionarItemInventario() {
