@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AtributosComponent } from './componentes/atributos/atributos.component';
-import { SidebarComponent } from './componentes/sidebar/sidebar.component';
-import { PericiasComponent } from "./componentes/pericias/pericias.component";
-import { StatusComponent } from './componentes/status/status.component';
-import { ResistenciasComponent } from './componentes/resistencias/resistencias.component';
-import { ProficienciasComponent } from './componentes/proficiencias/proficiencias.component';
+import { AtributosComponent } from './paginas/ficha/componentes/atributos/atributos.component';
+import { SidebarComponent } from './shared/componentes/sidebar/sidebar.component';
+import { CardPericiasComponent } from "./paginas/ficha/componentes/card-pericias/card-pericias.component";
+import { StatusComponent } from './paginas/ficha/componentes/status/status.component';
+import { CardResistenciasComponent } from './paginas/ficha/componentes/card-resistencias/card-resistencias.component';
+import { ProficienciasComponent } from './paginas/ficha/componentes/proficiencias/proficiencias.component';
+import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, AtributosComponent, PericiasComponent, StatusComponent, ResistenciasComponent, ProficienciasComponent],
+  imports: [RouterOutlet, SidebarComponent, AtributosComponent, CardPericiasComponent, StatusComponent, CardResistenciasComponent, ProficienciasComponent, AcoesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

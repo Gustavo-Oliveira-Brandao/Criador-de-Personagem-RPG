@@ -2,15 +2,18 @@
 
 <div class="pagina">
     <app-status />
-    <div class="atributos">
+    <div>
         <app-atributos />
         <div class="pericias">
-            <div class="esquerda">
-                <app-resistencias />
+            <div>
+                <app-card-resistencias />
                 <app-proficiencias />
             </div>
-            <app-pericias />
+            <app-card-pericias />
         </div>
+    </div>
+    <div class="acoes-inventario">
+        <app-acoes />
     </div>
 </div>
 <router-outlet />

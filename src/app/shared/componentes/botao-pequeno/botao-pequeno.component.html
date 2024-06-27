@@ -1,0 +1,7 @@
+@if(acao == "expandir"){
+    <button (click)="abrirMenu(nomeComponente)"><i class="fa-solid fa-plus"></i></button>
+}
+@if(acao == "deletar"){
+    <button class="delete" (click)="controleFicha.deletarItem(nomeComponente, index)"><i
+        class="fa-solid fa-trash"></i></button>
+}

@@ -1,0 +1,30 @@
+@if(!ehPericia){
+<div class="pericia">
+    <div class="atributo">
+        <p>{{ resistencia.siglaAtributo }}</p>
+    </div>
+    <div class="nome">
+        <button style="text-transform: capitalize;">{{ resistencia.id }}</button>
+    </div>
+    <div class="valor">
+        <p>{{ resistencia.valor }}</p>
+    </div>
+</div>
+}
+
+@if(ehPericia){
+<div class="pericia">
+    <select (change)="personagem.atualizarAtributos()" [(ngModel)]="pericia.grau">
+        <option *ngFor="let treinamento of personagem.treinamento">{{ treinamento.grau }}</option>
+    </select>
+    <div class="atributo">
+        <p>{{ pericia.siglaAtributo }}</p>
+    </div>
+    <div class="nome">
+        <button style="text-transform: capitalize;">{{ pericia.id }}</button>
+    </div>
+    <div class="valor">
+        <p>{{ pericia.valor }}</p>
+    </div>
+</div>
+}

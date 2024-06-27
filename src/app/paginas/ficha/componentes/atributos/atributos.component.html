@@ -1,0 +1,14 @@
+@for (atributo of personagem.atributos; track $index){
+<div id="{{atributo.id}}" class="container">
+    <span class="nomeAtributo">
+        <p class="sigla">{{ atributo.texto }}</p>
+    </span>
+
+    <p class="container modificador valor">{{
+        atributo.modificador }}</p>
+
+    <span (change)="personagem.atualizarAtributos()" class="container atributo">
+        <input class="valor" [(ngModel)]="atributo.valor">
+    </span>
+</div>
+}

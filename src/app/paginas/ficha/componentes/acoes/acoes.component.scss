@@ -1,0 +1,17 @@
+.card{
+    background-color: var(--container-color);
+    width: 40rem;
+    min-height: 20rem;
+    border: var(--default-border);
+    border-radius: 10px;
+
+    h2{
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .table-row{
+        display: flex;
+        justify-content: space-around;
+    }
+}

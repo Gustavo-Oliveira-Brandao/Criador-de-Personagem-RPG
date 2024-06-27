@@ -1,0 +1,58 @@
+.card {
+    width: 19rem;
+    height: 23.9rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .proficiencia {
+        position: relative;
+    }
+
+    h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .menu{
+
+        background-color: #181c2b;
+        border-radius: 15px;
+        padding: 1rem;
+        margin-top: 1rem;
+        .titulo{
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+
+        .tipo{
+            margin-left: 1rem;
+            background-color: #181c2b;
+            border: none;
+            width: 8rem;
+            height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .tipo:hover{
+            color: #f75a68;
+        }
+
+        .descricao{
+            margin-left: 1rem;
+            background-color: #181c2b;
+            border: none;
+            border-bottom: 1px solid #fff;
+        }
+    }
+}

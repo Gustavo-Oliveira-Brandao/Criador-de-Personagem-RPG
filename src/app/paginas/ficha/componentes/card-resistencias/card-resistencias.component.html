@@ -1,0 +1,6 @@
+<div class="container card">
+    <h2>Testes de resistência</h2>
+    @for (resistencia of personagem.resistencias; track $index){
+    <app-pericia [resistencia]="resistencia" [ehPericia]="false" />
+    }
+</div>

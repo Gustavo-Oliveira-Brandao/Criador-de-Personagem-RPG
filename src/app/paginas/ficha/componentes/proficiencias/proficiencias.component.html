@@ -1,0 +1,28 @@
+<div class="container card">
+    <h2>Proficiências</h2>
+    <div class="proficiencias">
+        @for(proficiencia of proficiencias.proficiencias; track $index; ){
+        <div class="proficiencia">
+            <app-proficiencia [proficiencia]="proficiencia" />
+            <app-botao-pequeno [nomeComponente]="'proficiencia'" [acao]="'deletar'" [index]="$index" />
+        </div>
+        }
+    </div>
+    <app-botao-pequeno [nomeComponente]="'proficiencia'" [acao]="'expandir'" />
+    @if(accordion.adicionarProficienciaEstaAberto){
+    <div class="menu">
+        <p class="titulo">Adicionar proficiência</p>
+        <div class="row">
+            <p>Tipo: </p>
+            <select class="tipo" id="tipo" [(ngModel)]="default">
+                <option *ngFor="let proficiencia of tiposProficiencia">{{ proficiencia }}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Descrição: </p>
+            <input class="descricao" id="descricao" />
+        </div>
+        <app-botao-adicionar [nomeComponente]="'proficiencia'" />
+    </div>
+    }
+</div>

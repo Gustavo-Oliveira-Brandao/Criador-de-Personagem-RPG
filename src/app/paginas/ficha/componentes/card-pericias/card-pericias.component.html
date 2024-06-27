@@ -1,0 +1,6 @@
+<div class="container card">
+  <h2>Pericias</h2>
+  @for(pericia of personagem.pericias; track $index){
+  <app-pericia [pericia]='pericia' [ehPericia]="true" />
+  }
+</div>
