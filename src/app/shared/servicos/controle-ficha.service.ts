@@ -14,9 +14,9 @@ export class ControleFichaService {
       this.personagem.adicionarProficiencia();
       this.controleAccordion.adicionarProficienciaEstaAberto = !this.controleAccordion.adicionarProficienciaEstaAberto
     }
-    if (nomeComponente == 'acao') {
-      this.personagem.adicionarAcao();
-      this.controleAccordion.adicionarAcaoEstaAberto = !this.controleAccordion.adicionarAcaoEstaAberto
+    if (nomeComponente == 'ataques') {
+      this.personagem.adicionarAtaque();
+      this.controleAccordion.adicionarAtaqueEstaAberto = !this.controleAccordion.adicionarAtaqueEstaAberto
     }
     if (nomeComponente == 'inventario') {
       this.personagem.adicionarItemInventario()
@@ -28,8 +28,8 @@ export class ControleFichaService {
     if (nomeComponente == "proficiencia") {
       this.personagem.removerProficiencia(index)
     }
-    if (nomeComponente == "acao") {
-      this.personagem.removerAcao(index)
+    if (nomeComponente == "ataques") {
+      this.personagem.removerAtaque(index)
     }
     if (nomeComponente == "item") {
       this.personagem.removerItemInventario(index)

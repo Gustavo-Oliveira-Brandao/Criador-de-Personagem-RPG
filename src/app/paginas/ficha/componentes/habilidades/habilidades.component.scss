@@ -1,0 +1,74 @@
+.card{
+    background-color: var(--container-color);
+    border: var(--default-border);
+    border-radius: 10px;
+    width: 30rem;
+    height: 44.5rem;
+
+    .nav-row{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-around;
+
+        button{
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .ataque-row{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .nome-ataque{
+            width: 30%;
+            padding: 8px;
+        }
+
+        .bonus-ataque{
+            width: 20%;
+            padding: 8px;
+        }
+
+        .dano-ataque{
+            width: 30%;
+            padding: 8px;
+        }
+    }
+
+    .accordion{
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        padding: 1rem;
+        width: 85%;
+        margin: 1rem auto 1rem auto;
+
+        .row{
+            display: flex;
+            align-items: center;
+
+            input{
+                margin-left: 1rem;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+
+            select{
+                margin-left: 1rem;
+                background-color: var(--secondary-color);
+                border: none;
+            }
+
+            select:hover{
+                cursor: pointer;
+                color: #f75a68;
+            }
+        }
+    }
+
+}

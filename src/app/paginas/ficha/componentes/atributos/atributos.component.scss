@@ -53,14 +53,14 @@ div {
     }
 
     .modificador {
-        border: 1px solid rgb(53, 58, 83);
+        border: 1px solid var(--secondary-color);
         cursor: pointer;
         width: 3.5rem;
         border-radius: 6px;
     }
     
     .modificador:hover{
-      background-color: rgb(54, 58, 87);
+      background-color: var(--secondary-color);
     }
 
 }

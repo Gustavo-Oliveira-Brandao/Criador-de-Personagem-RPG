@@ -21,8 +21,8 @@ export class BotaoPequenoComponent {
     if(nomeComponente == 'proficiencia'){
       this.controleAccordion.adicionarProficienciaEstaAberto = !this.controleAccordion.adicionarProficienciaEstaAberto
     }
-    if(nomeComponente == 'acao'){
-      this.controleAccordion.adicionarAcaoEstaAberto = !this.controleAccordion.adicionarAcaoEstaAberto
+    if(nomeComponente == 'ataques'){
+      this.controleAccordion.adicionarAtaqueEstaAberto = !this.controleAccordion.adicionarAtaqueEstaAberto
     }
     if(nomeComponente == 'item'){
       this.controleAccordion.adicionarItemEstaAberto = !this.controleAccordion.adicionarItemEstaAberto

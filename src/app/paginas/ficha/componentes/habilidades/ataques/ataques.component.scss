@@ -1,0 +1,30 @@
+.ataque-row{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 8px;
+        font-size: small;
+        border-radius: 6px;
+    }
+
+    .nome{
+        background-color: var(--secondary-color);
+        width: 30%;
+    }
+
+    .acerto{
+        background-color: var(--secondary-color);
+        width: 20%;
+        text-align: center;
+    }
+
+    .dano{
+        background-color: var(--secondary-color);
+        width: 30%;
+    }
+}

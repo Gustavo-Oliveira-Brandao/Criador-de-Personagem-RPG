@@ -8,7 +8,9 @@ export class ControleAccordionService {
   constructor() { }
 
   adicionarProficienciaEstaAberto : boolean = false;
-  adicionarAcaoEstaAberto : boolean = false;
+  adicionarAtaqueEstaAberto : boolean = false;
+  adicionarMagiaEstaAberto : boolean = false;
+  adicionarHabilidadeEstaAberto : boolean = false;
   adicionarItemEstaAberto : boolean = false;
-
+  
 }

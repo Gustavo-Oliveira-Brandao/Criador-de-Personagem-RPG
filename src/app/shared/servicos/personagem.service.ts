@@ -23,6 +23,8 @@ export class PersonagemService {
       manaAtual: 0,
     }
 
+  bba: number = 1;
+
   atributos: any =
     [
       {
@@ -375,50 +377,33 @@ export class PersonagemService {
     this.proficiencias.splice(index, 1)
   }
 
-  adicionarAcao() {
-    let nome = (<HTMLInputElement>document.getElementById('nome-acao'))
-    let custo = (<HTMLSelectElement>document.getElementById('custo-acao'))
-    let tipo = (<HTMLSelectElement>document.getElementById('tipo-acao'))
-    let descricao = (<HTMLInputElement>document.getElementById('descricao-acao'))
+  adicionarAtaque() {
+    let nome = (<HTMLInputElement>document.getElementById('nome-ataque')).value;
+    let atributoAtaque = (<HTMLSelectElement>document.getElementById('bonus-ataque')).value
+    let dano = (<HTMLInputElement>document.getElementById('dano-ataque')).value
 
-    let acao = {
-      nome: '',
-      custo: '',
-      tipo: '',
-      descricao: '',
-    }
+    if (nome != '' && dano != '') {
 
-    if (nome != null && descricao != null && custo != null && tipo != null) {
-      acao.nome = nome.value
-      acao.descricao = descricao.value
-      acao.custo = custo.value
-      acao.tipo = tipo.value
+      let bonus;
+      for (let atributo of this.atributos) {
+        if (atributoAtaque === atributo.texto) {
 
-      if (acao.tipo == "Habilidade de raça") {
-        this.acoes.habilidadesRaca.push(acao)
+          bonus = atributo.modificador + this.bba
+
+        }
       }
-      if (acao.tipo == "Habilidade de classe") {
-        this.acoes.habilidadesClasse.push(acao)
+      let ataque = {
+        nome: nome,
+        bonus: bonus,
+        dano: dano
       }
-      if (acao.tipo == "Talento") {
-        this.acoes.talentos.push(acao)
-      }
-      if (acao.tipo == "Passiva") {
-        this.acoes.passivas.push(acao)
-      }
-      if (acao.tipo == "Ataque") {
-        this.acoes.ataques.push(acao)
-      }
-      if (acao.tipo == "Magia") {
-        this.acoes.magias.push(acao)
-      }
-    } else {
-      alert('Insira as infos!')
+      this.acoes.ataques.push(ataque)
+      console.log(this.acoes)
     }
   }
 
-  removerAcao(index: number) {
-    this.acoes.splice(index, 1)
+  removerAtaque(index: number) {
+    this.acoes.ataques.splice(index, 1)
   }
 
   adicionarItemInventario() {

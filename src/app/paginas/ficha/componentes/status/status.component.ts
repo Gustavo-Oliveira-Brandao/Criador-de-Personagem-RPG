@@ -21,6 +21,10 @@ export class StatusComponent {
   accordionVidaEstaAberto: boolean = false;
   accordionManaEstaAberto: boolean = false;
 
+  subirNivel(){
+    this.personagem.info.nivel += 1;
+  }
+
   alterarVida(ehDano: boolean) {
     let elemento = (<HTMLInputElement>document.getElementById('valor-vida')).value
     let valor: number = Number(elemento)
