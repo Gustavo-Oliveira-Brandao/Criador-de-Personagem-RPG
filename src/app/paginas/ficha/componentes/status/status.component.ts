@@ -4,6 +4,7 @@ import { BarraVidaComponent } from './barra-vida/barra-vida.component';
 import { BarraManaComponent } from './barra-mana/barra-mana.component';
 import { PersonagemService } from '../../../../shared/servicos/personagem.service';
 import { ControleFichaService } from '../../../../shared/servicos/controle-ficha.service';
+import { Personagem } from '../../../../personagem';
 
 @Component({
   selector: 'app-status',

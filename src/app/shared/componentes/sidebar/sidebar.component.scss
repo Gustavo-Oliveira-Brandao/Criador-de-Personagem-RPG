@@ -1,6 +1,6 @@
 .sidebar {
 
-    background-color: var(--container-color);
+    background-color: var(--secondary-color);
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     z-index: 99;
 
     .active {
-        background-color: var(--background-color);
+        background-color: var(--container-color);
     }
 
     #rpgIcon {
@@ -50,7 +50,7 @@
 
     .btn-aba:hover {
         cursor: pointer;
-        background-color: var(--background-color);
+        background-color: var(--container-color);
     }
 
 }

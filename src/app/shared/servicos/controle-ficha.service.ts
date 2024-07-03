@@ -45,6 +45,7 @@ export class ControleFichaService {
     localStorage.setItem('acoes', JSON.stringify(this.personagem.acoes))
   }
 
+  
   carregarPersonagem() {
     const info = localStorage.getItem('info')
     const atributos = localStorage.getItem('atributos')

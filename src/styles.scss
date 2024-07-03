@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --background-color: hsl(0, 0%, 15%);
+    --background-color: #232425;
     --container-color: #1d232b;
     --secondary-color: #1c2e49;
     --default-font-color: #fff;
@@ -38,6 +38,11 @@ textarea {
 .container {
     background-color: var(--container-color);
     border: var(--default-border);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container:hover {
+    
 }
 
 ::-webkit-scrollbar {
