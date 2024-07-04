@@ -1,65 +1,11 @@
-<div class="container card">
-    <h2 (click)="controleFicha.salvarPersonagem()" style="margin-top: 0; margin-bottom: 0.5rem;">{{ personagem.info.nome }}</h2>
-    <h4 style="margin: 0;">{{ personagem.info.raca }} {{ personagem.info.classe }}</h4>
-    <h4 (click)="subirNivel()" style="margin: 0;">Nivel: {{ personagem.info.nivel }}</h4>
-    <img class="foto" src="assets/Character.jpg" alt="Personagem">
-    <div class="status" style="margin-top: 1.5rem;">
-        <div
-            style="display: flex; flex-direction: column; width: 180px; margin-left: auto; margin-right: auto; cursor: pointer;">
-            <div (click)="abrirVidaAccordion()">
-                <app-barra-vida />
-            </div>
-            @if(accordionVidaEstaAberto){
-            <div id="alterar-vida" class="accordion">
-                <div class="vidaMaxima">
-                    <p>Vida máxima</p>
-                    <input [(ngModel)]="personagem.info.vidaMaxima">
-                </div>
-                <div class="button-row">
-                    <input id="valor-vida">
-                    <button (click)="alterarVida(false)"><img src="assets/curar.svg"
-                            alt="curar"></button>
-                    <button (click)="alterarVida(true)"><img src="assets/levar-dano.svg"
-                            alt="levar dano"></button>
-                </div>
-            </div>
-            }
-            <div (click)="abrirManaAccordion()">
-                <app-barra-mana />
-            </div>
-            @if(accordionManaEstaAberto){
-            <div id="alterar-mana" class="accordion">
-                <div class="vidaMaxima">
-                    <p>Mana máxima</p>
-                    <input [(ngModel)]="personagem.info.manaMaxima">
-                </div>
-                <div class="button-row">
-                    <input id="valor-mana">
-                    <button (click)="alterarMana(false)"><img src="assets/curar.svg" alt="curar"></button>
-                    <button (click)="alterarMana(true)"><img src="assets/levar-dano.svg"
-                            alt="levar dano"></button>
-                </div>
-            </div>
-            }
+<div class="container" style="border-radius: 6px; height: 10rem; width: 80%; align-items: center; display: flex;">
+    <img src="assets/Character.jpg" alt="Foto do personagem"
+        style="object-fit: fill; width: 120px; height: 120px; border-radius: 100px; margin-left: 1.5rem;" />
+    <div style="margin-left: 1.5rem;">
+        <h4 style="margin: 0">{{personagem.info.nome}} - {{personagem.info.classe}} {{personagem.info.raca}}</h4>
+        <div>
+            <app-barra-status [tipo]="'vida'" />
+            <app-barra-status [tipo]="'mana'" />
         </div>
-        @if(!accordionVidaEstaAberto && !accordionManaEstaAberto){
-        <div class="row">
-            <div class="item">
-                <p>Classe de armadura</p>
-                <div>
-                    <img src="assets/shield.svg" alt="CA">
-                    <input [(ngModel)]="personagem.info.classeArmadura">
-                </div>
-            </div>
-            <div class="item">
-                <p>Deslocamento</p>
-                <div>
-                    <img src="assets/deslocamento.svg" alt="deslocamento">
-                    <input [(ngModel)]="personagem.info.deslocamento">
-                    <p>pés</p>
-                </div>
-            </div>
-        </div>
-        }
     </div>
 </div>

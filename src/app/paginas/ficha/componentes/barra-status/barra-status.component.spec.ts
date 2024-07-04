@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarraVidaComponent } from './barra-vida.component';
+import { BarraStatusComponent } from './barra-status.component';
 
-describe('BarraVidaComponent', () => {
-  let component: BarraVidaComponent;
-  let fixture: ComponentFixture<BarraVidaComponent>;
+describe('BarraStatusComponent', () => {
+  let component: BarraStatusComponent;
+  let fixture: ComponentFixture<BarraStatusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BarraVidaComponent]
+      imports: [BarraStatusComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BarraVidaComponent);
+    fixture = TestBed.createComponent(BarraStatusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

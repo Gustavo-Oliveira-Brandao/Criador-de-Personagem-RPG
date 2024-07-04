@@ -19,23 +19,23 @@
         margin-bottom: 0.5rem;
     }
 
-    .menu{
-
+    .menu {
         background-color: var(--secondary-color);
         border-radius: 15px;
         padding: 1rem;
         margin-top: 1rem;
-        .titulo{
+
+        .titulo {
             font-weight: bold;
             text-align: center;
         }
     }
 
-    .row{
+    .row {
         display: flex;
         align-items: center;
 
-        .tipo{
+        .tipo {
             margin-left: 1rem;
             background-color: var(--secondary-color);
             border: none;
@@ -44,11 +44,11 @@
             cursor: pointer;
         }
 
-        .tipo:hover{
+        .tipo:hover {
             color: #f75a68;
         }
 
-        .descricao{
+        .descricao {
             margin-left: 1rem;
             background-color: var(--secondary-color);
             border: none;

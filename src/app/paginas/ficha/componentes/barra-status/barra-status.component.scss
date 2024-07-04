@@ -12,13 +12,22 @@ div {
         grid-column-start: 1;
     }
 
-    progress::-webkit-progress-value {
+    .mana::-webkit-progress-value {
+        background: #24659b;
+    }
+
+    .mana::-webkit-progress-bar {
+        background: #181c2b;
+    }
+
+    .vida::-webkit-progress-value {
         background: #ac3650;
     }
 
-    progress::-webkit-progress-bar {
+    .vida::-webkit-progress-bar {
         background: #181c2b;
     }
+
     p {
         width: 100%;
         grid-row-start: 1;
@@ -28,3 +37,5 @@ div {
         text-align: center;
     }
 }
+
+

@@ -1,15 +1,13 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BarraVidaComponent } from './barra-vida/barra-vida.component';
-import { BarraManaComponent } from './barra-mana/barra-mana.component';
 import { PersonagemService } from '../../../../shared/servicos/personagem.service';
 import { ControleFichaService } from '../../../../shared/servicos/controle-ficha.service';
-import { Personagem } from '../../../../personagem';
+import { BarraStatusComponent } from '../barra-status/barra-status.component';
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [FormsModule, BarraVidaComponent, BarraManaComponent],
+  imports: [FormsModule, BarraStatusComponent ],
   templateUrl: './status.component.html',
   styleUrl: './status.component.scss'
 })
