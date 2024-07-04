@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { PersonagemService } from '../../../../shared/servicos/personagem.service';
 import { ControleFichaService } from '../../../../shared/servicos/controle-ficha.service';
 import { BarraStatusComponent } from '../barra-status/barra-status.component';
+import { StatusMenoresComponent } from '../status-menores/status-menores.component';
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [FormsModule, BarraStatusComponent ],
+  imports: [FormsModule, BarraStatusComponent, StatusMenoresComponent ],
   templateUrl: './status.component.html',
   styleUrl: './status.component.scss'
 })
