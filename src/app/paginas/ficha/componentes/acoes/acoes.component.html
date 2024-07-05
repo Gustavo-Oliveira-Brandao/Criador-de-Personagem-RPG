@@ -1,0 +1,149 @@
+<div class="container card">
+    <div class="nav-row">
+
+        <i class="fa-solid fa-arrow-left" (click)="alterarAba(-1)"></i>
+        <div class="aba">
+            @switch(abaIndex){
+            @case(0){
+            <img src="assets/attacks.svg" alt="ataques">
+            <h2 style="text-align: center;">Ataques</h2>
+            }
+            @case(1){
+            <img src="assets/white-book.svg" alt="grimório" />
+            <h2 style="text-align: center;">Grimório</h2>
+            }
+            @case(2){
+            <img src="assets/skills.svg" alt="habilidades">
+            <h2 style="text-align: center;">Habilidades</h2>
+            }
+            }
+        </div>
+        <i class="fa-solid fa-arrow-right" (click)="alterarAba(1)"></i>
+    </div>
+
+    @switch(abaIndex){
+
+    @case(0){
+    <div class="ataque-row">
+        <p class="nome-ataque">Nome</p>
+        <p class="bonus-ataque">Bônus</p>
+        <p class="dano-ataque">Dano</p>
+    </div>
+
+    @for(ataque of personagem.acoes.ataques; track $index){
+    <app-ataques [ataque]="ataque" />
+    }
+
+    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'ataques'" style="margin-left: 0.5rem;" />
+
+    @if(accordion.adicionarAtaqueEstaAberto){
+    <div class="accordion">
+        <div class="row">
+            <p>Nome do ataque: </p>
+            <input id="nome-ataque" />
+        </div>
+        <div class="row">
+            <p>Atributo usado: </p>
+            <select id="bonus-ataque" [(ngModel)]="atributoDefault">
+                <option *ngFor="let atributo of atributos">{{ atributo }}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Dano: </p>
+            <input id="dano-ataque" />
+        </div>
+        <app-botao-adicionar [nomeComponente]="'ataques'" />
+    </div>
+    }
+    }
+    @case(1){
+    @for(magia of personagem.acoes.magias; track $index){
+    <app-magia [magia]="magia" />
+    }
+
+    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'magias'" style="margin-left: 1rem;" />
+
+    @if(accordion.adicionarMagiaEstaAberto){
+    <div class="accordion">
+        <div class="row">
+            <p>Nome: </p>
+            <input id="nome-magia" />
+        </div>
+        <div class="row">
+            <p>Atributo: </p>
+            <select id="atributo-magia" [(ngModel)]="atributoDefault">
+                <option *ngFor="let atributo of atributos">{{atributo}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Tempo de execução: </p>
+            <select id="tempo-execucao-magia" [(ngModel)]="custoDefault">
+                <option *ngFor="let custo of custos">{{custo}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Nivel da mágia: </p>
+            <select id="nivel-circulo" [(ngModel)]="nivelDefault">
+                <option *ngFor="let nivel of niveis">{{nivel}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Pontos de magia: </p>
+            <input id="custo-pm-magia" />
+        </div>
+        <div class="row">
+            <p>Alcance: </p>
+            <input id="alcance-magia" />
+        </div>
+        <div class="row">
+            <p>Duração: </p>
+            <input id="duracao-magia" />
+        </div>
+        <div class="textarea">
+            <p>Descrição: </p>
+            <textarea id="descricao-magia"></textarea>
+        </div>
+        <div class="textarea">
+            <p>Niveis superiores: </p>
+            <textarea id="niveis-superiores-magia" ></textarea>
+        </div>
+        <app-botao-adicionar [nomeComponente]="'magias'" />
+    </div>
+    }
+    }
+    @case(2){
+    @for(habilidade of personagem.acoes.habilidades; track $index){
+    <app-habilidade [habilidade]="habilidade" />
+    }
+
+    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'habilidades'" style="margin-left: 1.5rem;" />
+
+    @if(accordion.adicionarHabilidadeEstaAberto){
+    <div class="accordion">
+        <div class="row">
+            <p>Nome: </p>
+            <input id="nome-habilidade" />
+        </div>
+        <div class="row">
+            <p>Custo: </p>
+            <select id="custo" [(ngModel)]="custoDefault">
+                <option *ngFor="let custo of custos">{{custo}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Origem: </p>
+            <select id="origem-habilidade" [(ngModel)]="origemDefault">
+                <option *ngFor="let origem of origens">{{origem}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Descrição: </p>
+            <input id="descricao-habilidade" />
+        </div>
+        <app-botao-adicionar [nomeComponente]="'habilidades'" />
+    </div>
+    }
+    }
+
+    }
+</div>

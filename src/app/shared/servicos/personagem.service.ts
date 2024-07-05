@@ -12,7 +12,7 @@ export class PersonagemService {
       nome: 'Takashi',
       classe: 'Shinkan',
       raca: 'Mashin',
-      nivel: 2,
+      nivel: 3,
       vidaMaxima: 0,
       vidaAtual: 0,
       vidaTemporaria: 0,
@@ -291,22 +291,15 @@ export class PersonagemService {
   proficiencias: any = []
 
   acoes: any = {
-    habilidadesRaca: [],
-
-    habilidadesClasse: [],
-
-    talentos: [],
+    habilidades: [],
 
     ataques: [],
 
     magias: [],
 
-    passivas: []
   }
 
-
   items: any = []
-
 
   atualizarAtributos() {
     for (let atributo of this.atributos) {
@@ -404,6 +397,60 @@ export class PersonagemService {
 
   removerAtaque(index: number) {
     this.acoes.ataques.splice(index, 1)
+  }
+
+  adicionarHabilidade() {
+    let nome = (<HTMLInputElement>document.getElementById('nome-habilidade')).value;
+    let descricao = (<HTMLInputElement>document.getElementById('descricao-habilidade')).value;
+    let custo = (<HTMLSelectElement>document.getElementById('custo')).value
+    let origemHabilidade = (<HTMLSelectElement>document.getElementById('origem-habilidade')).value;
+
+    let habilidade = {
+      nome: nome,
+      descricao: descricao,
+      custo: custo,
+      origem: origemHabilidade
+    }
+
+    if (nome != '' && descricao != '') {
+      this.acoes.habilidades.push(habilidade)
+    }
+  }
+
+  removerHabilidade(index: number) {
+    this.acoes.habilidades.splice(index, 1);
+  }
+
+  adicionarMagia() {
+    let nome = (<HTMLInputElement>document.getElementById('nome-magia')).value
+    let descricao = (<HTMLInputElement>document.getElementById('descricao-magia')).value
+    let atributo = (<HTMLSelectElement>document.getElementById('atributo-magia')).value
+    let tempoExecucao = (<HTMLSelectElement>document.getElementById('tempo-execucao-magia')).value
+    let nivel = (<HTMLSelectElement>document.getElementById('nivel-circulo')).value
+    let custoPm = (<HTMLInputElement>document.getElementById('custo-pm-magia')).value
+    let alcance = (<HTMLInputElement>document.getElementById('alcance-magia')).value
+    let duracao = (<HTMLInputElement>document.getElementById('duracao-magia')).value
+    let niveisSuperiores = (<HTMLInputElement>document.getElementById('niveis-superiores-magia')).value
+
+    let magia = {
+      nome: nome,
+      descricao: descricao,
+      atributo: atributo,
+      tempoExecucao: tempoExecucao,
+      nivel: nivel,
+      custoPm: custoPm,
+      alcance: alcance,
+      duracao: duracao,
+      niveisSuperiores: niveisSuperiores
+    }
+
+    if (nome != '' && descricao != '') {
+      this.acoes.magias.push(magia)
+    }
+  }
+
+  removerMagia(index: number) {
+    this.acoes.magias.splice(index, 1)
   }
 
   adicionarItemInventario() {

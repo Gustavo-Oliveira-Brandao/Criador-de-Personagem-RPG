@@ -1,22 +1,20 @@
-<div class="container"
-    style="border-radius: 6px; height: 10rem; width: 700px; align-items: center; display: flex; margin-left: 1.5rem;">
-    <img src="assets/Character.jpg" alt="Foto do personagem"
-        style="object-fit: fill; width: 120px; height: 120px; border-radius: 100px; margin-left: 1.5rem;" />
-    <div style="margin-left: 1.5rem;">
-        <h4 style="margin: 0">{{personagem.info.nome}} - {{personagem.info.classe}} {{personagem.info.raca}}</h4>
+<div class="container">
+    <div style="margin-left: auto; margin-right: auto;">
+        <h4 (click)="controleFicha.salvarPersonagem()" style="margin: 0">{{personagem.info.nome}} -
+            {{personagem.info.classe}} {{personagem.info.raca}}</h4>
         <div>
             <app-barra-status [tipo]="'vida'" />
             <app-barra-status [tipo]="'mana'" />
         </div>
     </div>
-    <div>
-        <div style="display: flex;">
-            <div style="margin-left: 3.5rem;">
-            <app-status-menores [icon]="'shield'" [tipo]="'ca'" />
+    <div class="info">
+            <div class='row'>
+                <app-status-menores [icon]="'level'" [tipo]="'nivel'" />
+                <app-status-menores [icon]="'shield'" [tipo]="'ca'" />
             </div>
-            <div style="margin-left: 3.5rem;">
-            <app-status-menores [icon]="'deslocamento'" [tipo]="'deslocamento'" />
+            <div class="row">
+                <app-status-menores [icon]="'honor'" [tipo]="'honra'" />
+                <app-status-menores [icon]="'deslocamento'" [tipo]="'deslocamento'" />
             </div>
         </div>
-    </div>
 </div>

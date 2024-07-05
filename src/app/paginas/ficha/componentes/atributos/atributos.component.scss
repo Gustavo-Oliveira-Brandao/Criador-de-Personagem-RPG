@@ -14,7 +14,6 @@ div {
     justify-content: center;
     align-items: center;
     position: absolute;
-    border-radius: 30px;
   }
 
   .nomeAtributo{
@@ -27,6 +26,7 @@ div {
     bottom: -1rem;
     width: 3rem;
     border-radius: 30px;
+    border: var(--default-border);
     input {
       text-align: center;
       font-size: 14px;

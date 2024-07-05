@@ -1,0 +1,32 @@
+
+
+
+<div class="magia-card">
+    <div (click)="expandir()" style="cursor: pointer;">
+    <p class="titulo">{{magia.nome}}</p>
+    </div>
+    @if(magiaEstaExpandida){
+    <div class="info">
+        <p style="font-weight: bold;">{{magia.nivel}}º nivel - {{magia.atributo}}</p>
+        <div class="row">
+            <p class="nomeCampo">Tempo de execução: </p>
+            <p> {{magia.tempoExecucao}}</p>
+        </div>
+        <div class="row">
+            <p class="nomeCampo">Alcance: </p>
+            <p> {{magia.alcance}}</p>
+        </div>
+        <div class="row">
+            <p class="nomeCampo">Duração: </p>
+            <p> {{magia.duracao}}</p>
+        </div>
+    </div>
+
+    <p class="descricao">{{magia.descricao}}</p>
+
+    <div style="padding: 0; margin: 0;">
+        <p style="font-weight: bold; font-size: 13px;">Em níveis superiores: </p>
+        <p class="descricao">{{magia.niveisSuperiores}}</p>
+    </div>
+}
+</div>

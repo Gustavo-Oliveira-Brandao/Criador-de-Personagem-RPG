@@ -1,11 +1,15 @@
 <div>
     <img src="assets/{{icon}}.svg" alt="" />
+    @if(tipo == 'nivel'){
+    <input [(ngModel)]="personagem.info.nivel">
+    }
+    @if(tipo == 'honra'){
+    <input [(ngModel)]="personagem.info.honra">
+    }
     @if(tipo == 'ca'){
     <input [(ngModel)]="personagem.info.classeArmadura">
     }
     @if(tipo == 'deslocamento'){
     <input [(ngModel)]="personagem.info.deslocamento">
-    <p>pés</p>
     }
-
 </div>

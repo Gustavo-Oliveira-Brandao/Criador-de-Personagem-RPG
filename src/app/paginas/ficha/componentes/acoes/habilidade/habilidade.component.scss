@@ -1,0 +1,20 @@
+div{
+  background-color: var(--secondary-color);
+  border-radius: 6px;
+  padding: 16px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  p{
+    font-size: 14px;
+  }
+
+  .nome{
+    color: #f75a68;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

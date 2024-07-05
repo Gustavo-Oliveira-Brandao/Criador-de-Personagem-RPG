@@ -18,6 +18,14 @@ export class ControleFichaService {
       this.personagem.adicionarAtaque();
       this.controleAccordion.adicionarAtaqueEstaAberto = !this.controleAccordion.adicionarAtaqueEstaAberto
     }
+    if (nomeComponente == 'habilidades'){
+      this.personagem.adicionarHabilidade();
+      this.controleAccordion.adicionarHabilidadeEstaAberto = !this.controleAccordion.adicionarHabilidadeEstaAberto;
+    }
+    if (nomeComponente == 'magias'){
+      this.personagem.adicionarMagia();
+      this.controleAccordion.adicionarMagiaEstaAberto = !this.controleAccordion.adicionarMagiaEstaAberto;
+    }
     if (nomeComponente == 'inventario') {
       this.personagem.adicionarItemInventario()
       this.controleAccordion.adicionarItemEstaAberto = !this.controleAccordion.adicionarItemEstaAberto
@@ -43,6 +51,7 @@ export class ControleFichaService {
     localStorage.setItem('resistencias', JSON.stringify(this.personagem.resistencias))
     localStorage.setItem('proficiencias', JSON.stringify(this.personagem.proficiencias))
     localStorage.setItem('acoes', JSON.stringify(this.personagem.acoes))
+    alert('Personagem salvo!')
   }
 
 

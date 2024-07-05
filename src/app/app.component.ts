@@ -7,12 +7,12 @@ import { StatusComponent } from './paginas/ficha/componentes/status/status.compo
 import { CardResistenciasComponent } from './paginas/ficha/componentes/card-resistencias/card-resistencias.component';
 import { ProficienciasComponent } from './paginas/ficha/componentes/proficiencias/proficiencias.component';
 import { ControleFichaService } from './shared/servicos/controle-ficha.service';
-import { HabilidadesComponent } from './paginas/ficha/componentes/habilidades/habilidades.component';
+import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, AtributosComponent, CardPericiasComponent, StatusComponent, CardResistenciasComponent, ProficienciasComponent, HabilidadesComponent],
+  imports: [RouterOutlet, SidebarComponent, AtributosComponent, CardPericiasComponent, StatusComponent, CardResistenciasComponent, ProficienciasComponent, AcoesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,7 +22,6 @@ export class AppComponent implements OnInit{
   constructor(protected controleFicha : ControleFichaService){}
 
   ngOnInit(): void {
-    console.log('ei')
     this.controleFicha.carregarPersonagem();
   }
 

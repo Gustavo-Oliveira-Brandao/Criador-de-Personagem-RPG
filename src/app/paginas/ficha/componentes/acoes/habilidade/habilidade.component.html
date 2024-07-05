@@ -1,0 +1,9 @@
+<div (click)="expandir()">
+  <p class="nome">{{habilidade.nome}}</p>
+  <p>Origem: {{habilidade.origem}}</p>
+  @if(habilidadeEstaExpandida){
+  <p>Custo: {{habilidade.custo}}</p>
+  <p>{{habilidade.descricao}}</p>
+  }
+
+</div>
