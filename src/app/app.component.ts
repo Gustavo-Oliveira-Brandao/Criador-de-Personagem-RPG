@@ -8,18 +8,27 @@ import { CardResistenciasComponent } from './paginas/ficha/componentes/card-resi
 import { ProficienciasComponent } from './paginas/ficha/componentes/proficiencias/proficiencias.component';
 import { ControleFichaService } from './shared/servicos/controle-ficha.service';
 import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.component';
+import { InfoPersonagemComponent } from './paginas/ficha/componentes/info-personagem/info-personagem.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, AtributosComponent, CardPericiasComponent, StatusComponent, CardResistenciasComponent, ProficienciasComponent, AcoesComponent],
+  imports: [RouterOutlet,
+    SidebarComponent,
+    AtributosComponent,
+    CardPericiasComponent,
+    StatusComponent,
+    CardResistenciasComponent,
+    ProficienciasComponent,
+    AcoesComponent,
+    InfoPersonagemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'projeto-rpg';
 
-  constructor(protected controleFicha : ControleFichaService){}
+  constructor(protected controleFicha: ControleFichaService) { }
 
   ngOnInit(): void {
     this.controleFicha.carregarPersonagem();

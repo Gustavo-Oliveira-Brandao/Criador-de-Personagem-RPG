@@ -11,7 +11,7 @@ export class PersonagemService {
     {
       nome: 'Takashi',
       classe: 'Shinkan',
-      raca: 'Mashin',
+      origem: 'Mashin',
       nivel: 3,
       vidaMaxima: 0,
       vidaAtual: 0,

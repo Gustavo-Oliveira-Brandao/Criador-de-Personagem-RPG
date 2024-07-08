@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PersonagemService } from '../../../../shared/servicos/personagem.service';
 import { ControleFichaService } from '../../../../shared/servicos/controle-ficha.service';
@@ -8,65 +8,57 @@ import { StatusMenoresComponent } from '../status-menores/status-menores.compone
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [FormsModule, BarraStatusComponent, StatusMenoresComponent ],
+  imports: [FormsModule, BarraStatusComponent, StatusMenoresComponent],
   templateUrl: './status.component.html',
   styleUrl: './status.component.scss'
 })
 export class StatusComponent {
 
-  @ViewChild('vida') vida: ElementRef<HTMLCanvasElement>
+  constructor(protected personagem: PersonagemService, protected controleFicha: ControleFichaService) { }
 
-  constructor(protected personagem : PersonagemService, protected controleFicha : ControleFichaService) { }
+  editarVidaEstaAberto: boolean = false;
+  editarManaEstaAberto: boolean = false;
 
-  accordionVidaEstaAberto: boolean = false;
-  accordionManaEstaAberto: boolean = false;
-
-  subirNivel(){
-    this.personagem.info.nivel += 1;
+  abrirEdicaoVida() {
+    this.editarVidaEstaAberto = !this.editarVidaEstaAberto
+  }
+  abrirEdicaoMana() {
+    this.editarManaEstaAberto = !this.editarManaEstaAberto
   }
 
   alterarVida(ehDano: boolean) {
-    let elemento = (<HTMLInputElement>document.getElementById('valor-vida')).value
-    let valor: number = Number(elemento)
+    let valor = Number((<HTMLInputElement>document.getElementById('valor-vida')).value)
 
-    if (ehDano) {
-      this.personagem.info.vidaAtual -= valor;
-    }
+    if (valor != null) {
+      if (ehDano) {
+        this.personagem.info.vidaAtual -= valor
+      }
+      if (!ehDano) {
+        this.personagem.info.vidaAtual += valor
 
-    if (!ehDano) {
-      this.personagem.info.vidaAtual += valor;
-
-      if (this.personagem.info.vidaAtual > this.personagem .info.vidaMaxima) {
-        this.personagem.info.vidaAtual = this.personagem .info.vidaMaxima
+        if(this.personagem.info.vidaAtual > this.personagem.info.vidaMaxima){
+          this.personagem.info.vidaAtual = this.personagem.info.vidaMaxima
+        }
       }
     }
-
-    this.accordionVidaEstaAberto = !this.accordionVidaEstaAberto;
+    this.editarVidaEstaAberto = !this.editarVidaEstaAberto
   }
 
-  alterarMana(gastouMana : boolean){
-    let elemento = (<HTMLInputElement>document.getElementById('valor-mana')).value
-    let valor: number = Number(elemento)
+  alterarMana(ehGasto: boolean){
+    let valor = Number((<HTMLInputElement>document.getElementById('valor-mana')).value)
 
-    if(gastouMana){
-      this.personagem.info.manaAtual -= valor;
-    }
-
-    if(!gastouMana){
-      this.personagem.info.manaAtual += valor;
-
-      if(this.personagem.info.manaAtual > this.personagem.info.manaMaxima) {
-        this.personagem.info.manaAtual = this.personagem.info.vidaMaxima
+    if (valor != null) {
+      if(ehGasto){
+        this.personagem.info.manaAtual -= valor
       }
+      if(!ehGasto){
+        this.personagem.info.manaAtual += valor
+        
+        if(this.personagem.info.manaAtual > this.personagem.info.manaMaxima){
+          this.personagem.info.manaAtual = this.personagem.info.manaMaxima
+        }
+      }
+      this.editarManaEstaAberto = !this.editarManaEstaAberto;
     }
   }
-
-  abrirVidaAccordion() {
-    this.accordionVidaEstaAberto = !this.accordionVidaEstaAberto
-  }
-
-  abrirManaAccordion() {
-    this.accordionManaEstaAberto = !this.accordionManaEstaAberto
-  }
-
 }

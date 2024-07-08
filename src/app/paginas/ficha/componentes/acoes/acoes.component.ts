@@ -8,11 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { BotaoAdicionarComponent } from '../../../../shared/componentes/botao-adicionar/botao-adicionar.component';
 import { HabilidadeComponent } from './habilidade/habilidade.component';
 import { MagiaComponent } from './magia/magia.component';
+import { StatusComponent } from '../status/status.component';
 
 @Component({
   selector: 'app-acoes',
   standalone: true,
-  imports: [BotaoPequenoComponent, AtaquesComponent, NgForOf, FormsModule, BotaoAdicionarComponent, HabilidadeComponent, MagiaComponent],
+  imports: [BotaoPequenoComponent, AtaquesComponent, NgForOf, FormsModule, BotaoAdicionarComponent, HabilidadeComponent, MagiaComponent, StatusComponent],
   templateUrl: './acoes.component.html',
   styleUrl: './acoes.component.scss'
 })

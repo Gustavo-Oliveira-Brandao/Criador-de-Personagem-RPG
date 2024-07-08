@@ -1,20 +1,43 @@
-<div class="container">
-    <div style="margin-left: auto; margin-right: auto;">
-        <h4 (click)="controleFicha.salvarPersonagem()" style="margin: 0">{{personagem.info.nome}} -
-            {{personagem.info.classe}} {{personagem.info.raca}}</h4>
-        <div>
-            <app-barra-status [tipo]="'vida'" />
-            <app-barra-status [tipo]="'mana'" />
+<div class="status">
+    <div style="display: flex; justify-content: space-between;">
+        <div class="barra">
+            <app-barra-status style="cursor: pointer;" (click)="abrirEdicaoVida()" [tipo]="'vida'" />
+            @if(editarVidaEstaAberto){
+            <div class="aba-editar">
+                <p style="font-size: 13px; text-align: center; margin-top: 0;">Alterar vida atual</p>
+                <div class="campo" style="justify-content: space-between;">
+                    <button class="botao-vida" (click)="alterarVida(true)">Dano</button>
+                    <input id="valor-vida" placeholder="0" style="margin-left: 0;" />
+                    <button class="botao-vida" (click)="alterarVida(false)">Cura</button>
+                </div>
+                <div class="campo">
+                    <p>Vida máxima: </p>
+                    <input placeholder="0" [(ngModel)]="personagem.info.vidaMaxima" />
+                </div>
+            </div>
+        }
+        </div>
+        <div class="barra">
+            <app-barra-status style="cursor: pointer;" (click)="abrirEdicaoMana()" [tipo]="'mana'" />
+            @if(editarManaEstaAberto){
+            <div class="aba-editar">
+                <p style="font-size: 13px; text-align: center; margin-top: 0;">Alterar mana atual</p>
+                <div class="campo" style="justify-content: space-between;">
+                    <button class="botao-mana" (click)="alterarMana(true)">Gastar</button>
+                    <input id="valor-mana" placeholder="0" style="margin-left: 0;" />
+                    <button class="botao-mana" (click)="alterarMana(false)">Restaurar</button>
+                </div>
+                <div class="campo">
+                    <p>Mana máxima: </p>
+                    <input placeholder="0" [(ngModel)]="personagem.info.manaMaxima" />
+                </div>
+            </div>
+        }
         </div>
     </div>
-    <div class="info">
-            <div class='row'>
-                <app-status-menores [icon]="'level'" [tipo]="'nivel'" />
-                <app-status-menores [icon]="'shield'" [tipo]="'ca'" />
-            </div>
-            <div class="row">
-                <app-status-menores [icon]="'honor'" [tipo]="'honra'" />
-                <app-status-menores [icon]="'deslocamento'" [tipo]="'deslocamento'" />
-            </div>
-        </div>
+    <div class="status-menores">
+        <app-status-menores [icon]="'level'" [tipo]="'nivel'" />
+        <app-status-menores [icon]="'shield'" [tipo]="'classe de armadura'" />
+        <app-status-menores [icon]="'deslocamento'" [tipo]="'deslocamento'" />
+    </div>
 </div>

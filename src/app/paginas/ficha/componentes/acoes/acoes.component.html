@@ -1,12 +1,11 @@
 <div class="container card">
     <div class="nav-row">
-
         <i class="fa-solid fa-arrow-left" (click)="alterarAba(-1)"></i>
         <div class="aba">
             @switch(abaIndex){
             @case(0){
-            <img src="assets/attacks.svg" alt="ataques">
-            <h2 style="text-align: center;">Ataques</h2>
+            <img src="assets/attacks.svg" alt="Combate">
+            <h2 style="text-align: center;">Combate</h2>
             }
             @case(1){
             <img src="assets/white-book.svg" alt="grimório" />
@@ -24,6 +23,8 @@
     @switch(abaIndex){
 
     @case(0){
+    <app-status />
+    <h3 style="text-align: center; margin-bottom: 0;">Ataques</h3>
     <div class="ataque-row">
         <p class="nome-ataque">Nome</p>
         <p class="bonus-ataque">Bônus</p>
@@ -105,7 +106,7 @@
         </div>
         <div class="textarea">
             <p>Niveis superiores: </p>
-            <textarea id="niveis-superiores-magia" ></textarea>
+            <textarea id="niveis-superiores-magia"></textarea>
         </div>
         <app-botao-adicionar [nomeComponente]="'magias'" />
     </div>

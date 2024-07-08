@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="info">
+        <p (click)="controleFicha.salvarPersonagem()">Nome: </p>
+        <input placeholder="Insira seu nome" [(ngModel)]="personagem.info.nome" />
+    </div>
+    <div class="info">
+        <p>Origem: </p>
+        <input placeholder="Insira sua origem" [(ngModel)]="personagem.info.origem" />
+    </div>
+    <div class="info">
+        <p>Classe: </p>
+        <input placeholder="Insira sua classe" [(ngModel)]="personagem.info.classe" />
+    </div>
+</div>

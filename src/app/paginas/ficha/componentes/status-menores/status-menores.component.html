@@ -1,15 +1,19 @@
-<div>
-    <img src="assets/{{icon}}.svg" alt="" />
-    @if(tipo == 'nivel'){
-    <input [(ngModel)]="personagem.info.nivel">
-    }
-    @if(tipo == 'honra'){
-    <input [(ngModel)]="personagem.info.honra">
-    }
-    @if(tipo == 'ca'){
-    <input [(ngModel)]="personagem.info.classeArmadura">
-    }
-    @if(tipo == 'deslocamento'){
-    <input [(ngModel)]="personagem.info.deslocamento">
-    }
+<div class="status-menor">
+    <p style="text-align: center; text-transform: capitalize; font-size: 11.5px; margin-top: 0; margin-bottom: 0;">
+        {{tipo}}</p>
+    <div class="icon">
+        <img src="assets/{{icon}}.svg" alt="" />
+        @if(tipo == 'nivel'){
+        <input type="number" (change)="personagem.atualizarAtributos()" [(ngModel)]="personagem.info.nivel">
+        }
+        @if(tipo == 'honra'){
+        <input type="number" [(ngModel)]="personagem.info.honra">
+        }
+        @if(tipo == 'classe de armadura'){
+        <input type="number" [(ngModel)]="personagem.info.classeArmadura">
+        }
+        @if(tipo == 'deslocamento'){
+        <input type="number" [(ngModel)]="personagem.info.deslocamento">
+        }
+    </div>
 </div>

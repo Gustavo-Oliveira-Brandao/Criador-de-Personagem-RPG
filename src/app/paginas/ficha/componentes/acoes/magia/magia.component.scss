@@ -2,7 +2,7 @@
     text-transform: uppercase;
     font-weight: bold;
     width: 80%;
-    padding: 10px 2rem 10px 2rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     border-radius: 6px;
@@ -53,5 +53,6 @@
 
     .descricao{
         font-size: 13px;
+        white-space: pre-wrap;
     }
 }
