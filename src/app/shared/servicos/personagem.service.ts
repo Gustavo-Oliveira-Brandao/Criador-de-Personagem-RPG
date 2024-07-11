@@ -9,10 +9,10 @@ export class PersonagemService {
 
   info: any =
     {
-      nome: 'Takashi',
-      classe: 'Shinkan',
-      origem: 'Mashin',
-      nivel: 3,
+      nome: '',
+      classe: '',
+      origem: '',
+      nivel: 1,
       vidaMaxima: 0,
       vidaAtual: 0,
       vidaTemporaria: 0,
@@ -22,8 +22,6 @@ export class PersonagemService {
       manaMaxima: 0,
       manaAtual: 0,
     }
-
-  bba: number = 1;
 
   atributos: any =
     [
@@ -372,26 +370,56 @@ export class PersonagemService {
 
   adicionarAtaque() {
     let nome = (<HTMLInputElement>document.getElementById('nome-ataque')).value;
-    let atributoAtaque = (<HTMLSelectElement>document.getElementById('bonus-ataque')).value
+    let atributoAcerto = (<HTMLSelectElement>document.getElementById('atributo-acerto-ataque')).value
+    let atributoDano = (<HTMLSelectElement>document.getElementById('atributo-dano-ataque')).value
+    let cd = Number((<HTMLInputElement>document.getElementById('cd-ataque')).value)
+    let atributoResistido = (<HTMLSelectElement>document.getElementById('atributo-resistido-ataque')).value
     let dano = (<HTMLInputElement>document.getElementById('dano-ataque')).value
+    let tipo = (<HTMLInputElement>document.getElementById('tipo-dano-ataque')).value
+    let bonusAcerto = Number((<HTMLInputElement>document.getElementById('bonus-acerto')).value)
+    let bonusDano = Number((<HTMLInputElement>document.getElementById('bonus-dano')).value)
+    let descricao = (<HTMLInputElement>document.getElementById('descricao-ataque')).value
+    let temAcerto = false
+    let temDano = false
+    let temTeste = false
 
-    if (nome != '' && dano != '') {
+    if ((<HTMLInputElement>document.getElementById('tem-acerto')).checked) {
+      temAcerto = true
+    }
+    if ((<HTMLInputElement>document.getElementById("tem-dano")).checked) {
+      temDano = true
+    }
+    if ((<HTMLInputElement>document.getElementById('tem-teste')).checked) {
+      temTeste = true
+    }
 
-      let bonus;
+    console.log(temAcerto)
+
+    if (nome != '') {
       for (let atributo of this.atributos) {
-        if (atributoAtaque === atributo.texto) {
-
-          bonus = atributo.modificador + this.bba
-
+        if (atributoAcerto === atributo.texto) {
+          bonusAcerto += atributo.modificador
+        }
+        if (atributoDano === atributo.texto) {
+          bonusDano += atributo.modificador
         }
       }
+
       let ataque = {
         nome: nome,
-        bonus: bonus,
-        dano: dano
+        bonusAcerto: bonusAcerto,
+        bonusDano: bonusDano,
+        cd: cd,
+        atributoResistido: atributoResistido,
+        temAcerto: temAcerto,
+        temDano: temDano,
+        temTeste: temTeste,
+        dano: dano,
+        tipo: tipo,
+        descricao: descricao
       }
+
       this.acoes.ataques.push(ataque)
-      console.log(this.acoes)
     }
   }
 

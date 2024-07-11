@@ -1,5 +1,5 @@
 <div class="ataque-row">
     <p class="nome">{{ ataque.nome }}</p>
-    <p class="acerto">@if(ataque.bonus > 0){+}{{ ataque.bonus }}</p>
-    <p class="dano">{{ ataque.dano }}</p>
+    <p class="acerto">@if(ataque.temAcerto){@if(ataque.bonusAcerto > 0){+}{{ ataque.bonusAcerto }}}</p>
+    <p class="dano">{{ ataque.dano}}@if(ataque.bonusDano > 0){+}{{ataque.bonusDano}} {{ ataque.tipo }}</p>
 </div>

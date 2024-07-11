@@ -1,12 +1,10 @@
 <div style="margin-top: 1rem;">
     @if(tipo == "vida"){
-    <p>Vida: {{ StatsPersonagemService.info.vidaAtual }}/{{ StatsPersonagemService.info.vidaMaxima }}</p>
-    <progress class="vida" value="{{StatsPersonagemService.info.vidaAtual}}"
-        max="{{StatsPersonagemService.info.vidaMaxima}}"></progress>
+    <p>Vida: {{ personagem.info.vidaAtual }}/{{ personagem.info.vidaMaxima }}</p>
+    <progress class="vida" value="{{personagem.info.vidaAtual}}" max="{{personagem.info.vidaMaxima}}"></progress>
     }
     @if(tipo == "mana"){
-        <p>Mana: {{ StatsPersonagemService.info.manaAtual }}/{{ StatsPersonagemService.info.manaMaxima }}</p>
-        <progress class="mana" value="{{StatsPersonagemService.info.manaAtual}}"
-            max="{{StatsPersonagemService.info.manaMaxima}}"></progress>
-        }
+    <p>Mana: {{ personagem.info.manaAtual }}/{{ personagem.info.manaMaxima }}</p>
+    <progress class="mana" value="{{personagem.info.manaAtual}}" max="{{personagem.info.manaMaxima}}"></progress>
+    }
 </div>

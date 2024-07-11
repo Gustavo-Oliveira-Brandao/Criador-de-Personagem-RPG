@@ -9,11 +9,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MagiaComponent {
 
-  magiaEstaExpandida:boolean = false;
+  magiaEstaExpandida: boolean = false;
 
-  expandir(){
+  expandir() {
     this.magiaEstaExpandida = !this.magiaEstaExpandida
   }
-  
-  @Input() public magia:any
+
+  @Input() public magia: any
 }

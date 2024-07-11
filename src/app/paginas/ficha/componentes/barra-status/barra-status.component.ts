@@ -12,5 +12,5 @@ export class BarraStatusComponent {
 
   @Input() public tipo:any;
   
-  constructor(protected StatsPersonagemService : PersonagemService){}
+  constructor(protected personagem : PersonagemService){}
 }

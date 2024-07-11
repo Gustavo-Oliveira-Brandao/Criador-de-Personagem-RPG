@@ -24,7 +24,7 @@
 
     @case(0){
     <app-status />
-    <h3 style="text-align: center; margin-bottom: 0;">Ataques</h3>
+    <h3 style="text-align: center; margin-bottom: 0;">Ataques e conjuração</h3>
     <div class="ataque-row">
         <p class="nome-ataque">Nome</p>
         <p class="bonus-ataque">Bônus</p>
@@ -40,18 +40,51 @@
     @if(accordion.adicionarAtaqueEstaAberto){
     <div class="accordion">
         <div class="row">
-            <p>Nome do ataque: </p>
-            <input id="nome-ataque" />
+            <p>Nome: </p>
+            <input placeholder="Machado grande" id="nome-ataque" />
         </div>
         <div class="row">
-            <p>Atributo usado: </p>
-            <select id="bonus-ataque" [(ngModel)]="atributoDefault">
+            <input checked type="checkbox" id="tem-acerto" />
+            <p>Ataque: </p>
+            <select id="atributo-acerto-ataque">
                 <option *ngFor="let atributo of atributos">{{ atributo }}</option>
             </select>
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <input type="number" style="width: 2rem; margin-left: 0; text-align: center;" id="bonus-acerto"
+                placeholder="0" />
         </div>
         <div class="row">
+            <input checked type="checkbox" id="tem-dano" />
             <p>Dano: </p>
-            <input id="dano-ataque" />
+            <input style="width: 3rem;" placeholder="1d12" id="dano-ataque" />
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <select id="atributo-dano-ataque">
+                <option *ngFor="let atributo of atributos">{{ atributo }}</option>
+            </select>
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <input type="number" style="margin-left: 0; width: 2rem; text-align: center;" id="bonus-dano"
+                placeholder="0" />
+        </div>
+        <div class="row">
+            <p>Tipo de dano: </p>
+            <input style="width: 8rem;" placeholder="Concussão" id="tipo-dano-ataque" />
+        </div>
+        <div class="row">
+            <input type="checkbox" id="tem-teste" />
+            <p>Teste de resistência: </p>
+            <select style="margin-left: 0.5rem; margin-right: 0.5rem;" id="atributo-resistido-ataque">
+                <option *ngFor="let resistencia of resistencias">{{resistencia}}</option>
+            </select>
+            <p>vs</p>
+            <input style="width: 2rem; text-align: center;" placeholder="0" id="cd-ataque" />
+        </div>
+        <div class="row">
+            <p>Efeito do teste: </p>
+            <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-ataque" />
+        </div>
+        <div>
+            <p>Descrição: </p>
+            <textarea id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
         </div>
         <app-botao-adicionar [nomeComponente]="'ataques'" />
     </div>
@@ -72,19 +105,19 @@
         </div>
         <div class="row">
             <p>Atributo: </p>
-            <select id="atributo-magia" [(ngModel)]="atributoDefault">
+            <select id="atributo-magia">
                 <option *ngFor="let atributo of atributos">{{atributo}}</option>
             </select>
         </div>
         <div class="row">
             <p>Tempo de execução: </p>
-            <select id="tempo-execucao-magia" [(ngModel)]="custoDefault">
+            <select id="tempo-execucao-magia">
                 <option *ngFor="let custo of custos">{{custo}}</option>
             </select>
         </div>
         <div class="row">
             <p>Nivel da mágia: </p>
-            <select id="nivel-circulo" [(ngModel)]="nivelDefault">
+            <select id="nivel-circulo">
                 <option *ngFor="let nivel of niveis">{{nivel}}</option>
             </select>
         </div>
@@ -127,13 +160,13 @@
         </div>
         <div class="row">
             <p>Custo: </p>
-            <select id="custo" [(ngModel)]="custoDefault">
+            <select id="custo">
                 <option *ngFor="let custo of custos">{{custo}}</option>
             </select>
         </div>
         <div class="row">
             <p>Origem: </p>
-            <select id="origem-habilidade" [(ngModel)]="origemDefault">
+            <select id="origem-habilidade">
                 <option *ngFor="let origem of origens">{{origem}}</option>
             </select>
         </div>
@@ -145,6 +178,5 @@
     </div>
     }
     }
-
     }
 </div>

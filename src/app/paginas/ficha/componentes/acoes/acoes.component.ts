@@ -35,15 +35,13 @@ export class AcoesComponent {
       }
   }
 
-  atributoDefault: string = "Força"
   atributos = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
 
-  custoDefault: string = "Ação padrão"
+  resistencias = ["Fortitude", "Reflexos", "Vontade"]
+
   custos = ["Ação padrão", "Ação de movimento", "Ação completa", "Ação livre", "Passivo"]
 
-  nivelDefault:number = 1.
   niveis = [1, 2, 3, 4, 5]
   
-  origemDefault: string = "Habilidade de raça"
   origens = ["Habilidade de raça", "Habilidade de classe", "Talento"]
 }
