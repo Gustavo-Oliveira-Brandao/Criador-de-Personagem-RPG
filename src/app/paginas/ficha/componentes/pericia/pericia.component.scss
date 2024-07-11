@@ -19,7 +19,7 @@
 
     select {
         border: none;
-        background-color: var(--container-color);
+        background-color: var(--cor-cards);
         margin-right: 0.5rem;
     }
 
@@ -34,11 +34,11 @@
 
     select:hover {
         cursor: pointer;
-        color: #f75a68;
+        color: var(--cor-destaque);
     }
 
     button:hover {
-        color: #f75a68;
+        color: var(--cor-destaque);
         cursor: pointer;
     }
 

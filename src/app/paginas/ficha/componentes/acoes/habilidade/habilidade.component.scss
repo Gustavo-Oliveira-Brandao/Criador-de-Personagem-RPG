@@ -1,5 +1,5 @@
 div{
-  background-color: var(--secondary-color);
+  background-color: var(--cor-secundaria);
   border-radius: 6px;
   padding: 16px;
   width: 85%;
@@ -13,7 +13,7 @@ div{
   }
 
   .nome{
-    color: #f75a68;
+    color: var(--cor-destaque);
     font-weight: bold;
     text-transform: uppercase;
   }

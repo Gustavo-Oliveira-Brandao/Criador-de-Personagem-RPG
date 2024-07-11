@@ -1,11 +1,11 @@
 :root {
-  --background-color: #171a1e;
-  --container-color: #222831;
-  --secondary-color: #313a47;
-  --default-font-color: #fff;
-  --default-font-family: "Poppins", sans-serif;
-  --default-border: 1px solid gray;
-  --barra-de-vida: calc((2 * pi * 68) - ((2 * pi * 68) * 100) / 100);
+  --cor-fundo: #171a1e;
+  --cor-cards: #222831;
+  --cor-secundaria: #313a47;
+  --cor-destaque: #f75a68;
+  --cor-fonte: #fff;
+  --fonte: "Poppins", sans-serif;
+  --borda: 1px solid gray;
 }
 
 html {
@@ -52,12 +52,12 @@ select,
 button,
 label,
 textarea {
-  font-family: var(--default-font-family);
-  color: var(--default-font-color);
+  font-family: var(--fonte);
+  color: var(--cor-fonte);
 }
 
 .container {
-  background-color: var(--container-color);
+  background-color: var(--cor-cards);
 }
 
 ::-webkit-scrollbar {

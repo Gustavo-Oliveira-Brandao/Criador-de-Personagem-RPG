@@ -62,7 +62,7 @@
     }
 
     .accordion {
-        background-color: var(--secondary-color);
+        background-color: var(--cor-secundaria);
         border-radius: 10px;
         padding: 1rem;
         width: 90%;
@@ -76,20 +76,20 @@
                 margin-left: 1rem;
                 background-color: transparent;
                 border: none;
-                border-bottom: 1px solid gray;
+                border-bottom: var(--borda);
             }
 
 
 
             select {
                 margin-left: 1rem;
-                background-color: var(--secondary-color);
+                background-color: var(--cor-secundaria);
                 border: none;
             }
 
             select:hover {
                 cursor: pointer;
-                color: #f75a68;
+                color: var(--cor-destaque);
             }
         }
     }

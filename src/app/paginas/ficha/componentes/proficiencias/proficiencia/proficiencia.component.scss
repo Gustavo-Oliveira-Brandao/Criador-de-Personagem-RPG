@@ -1,5 +1,5 @@
 div {
-    background-color: var(--secondary-color);
+    background-color: var(--cor-secundaria);
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1rem;
@@ -8,7 +8,7 @@ div {
         text-transform: uppercase;
         font-size: 12px;
         font-weight: bold;
-        color: #f75a68;
+        color: var(--cor-destaque);
     }
 
     .descricao {
