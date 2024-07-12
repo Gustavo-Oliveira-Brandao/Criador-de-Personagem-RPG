@@ -35,7 +35,7 @@
     <app-ataques [ataque]="ataque" />
     }
 
-    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'ataques'" style="margin-left: 0.5rem;" />
+    <app-botao-pequeno acao="expandir" nomeComponente="ataques" style="margin-left: 0.5rem;" />
 
     @if(accordion.adicionarAtaqueEstaAberto){
     <div class="accordion">
@@ -86,7 +86,7 @@
             <p>Descrição: </p>
             <textarea id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
         </div>
-        <app-botao-adicionar [nomeComponente]="'ataques'" />
+        <app-botao-adicionar nomeComponente="ataques" />
     </div>
     }
     }
@@ -95,25 +95,13 @@
     <app-magia [magia]="magia" />
     }
 
-    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'magias'" style="margin-left: 1rem;" />
+    <app-botao-pequeno acao="expandir" nomeComponente="magias" style="margin-left: 1rem;" />
 
     @if(accordion.adicionarMagiaEstaAberto){
     <div class="accordion">
         <div class="row">
             <p>Nome: </p>
-            <input id="nome-magia" />
-        </div>
-        <div class="row">
-            <p>Atributo: </p>
-            <select id="atributo-magia">
-                <option *ngFor="let atributo of atributos">{{atributo}}</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Tempo de execução: </p>
-            <select id="tempo-execucao-magia">
-                <option *ngFor="let custo of custos">{{custo}}</option>
-            </select>
+            <input placeholder="Bola de fogo" id="nome-magia" />
         </div>
         <div class="row">
             <p>Nivel da mágia: </p>
@@ -123,25 +111,62 @@
         </div>
         <div class="row">
             <p>Pontos de magia: </p>
-            <input id="custo-pm-magia" />
+            <input style="width: 2rem; text-align: center;" placeholder="0" id="custo-pm-magia" />
+        </div>
+        <div class="row">
+            <p>Tempo de execução: </p>
+            <select id="tempo-execucao-magia">
+                <option *ngFor="let custo of custos">{{custo}}</option>
+            </select>
         </div>
         <div class="row">
             <p>Alcance: </p>
-            <input id="alcance-magia" />
+            <input style="width: 5rem;" placeholder="30 pés" id="alcance-magia" />
         </div>
         <div class="row">
             <p>Duração: </p>
-            <input id="duracao-magia" />
+            <input style="width: 5rem;" placeholder="1 hora" id="duracao-magia" />
+        </div>
+        <div class="row">
+            <input type="checkbox" id="tem-ataque-magia" />
+            <p>Ataque:</p>
+            <select id="atributo-ataque-magia">
+                <option *ngFor="let atributo of atributos">{{atributo}}</option>
+            </select>
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <input type="number" style="margin-left:0; width: 2rem; text-align: center;" id="bonus-acerto-magia" placeholder="0" />
+        </div>
+        <div class="row">
+            <input type="checkbox" id="tem-dano-magia" />
+            <p>Dano:</p>
+            <select id="atributo-dano-magia">
+                <option *ngFor="let atributo of atributos">{{atributo}}</option>
+            </select>
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <input type="number" style="margin-left:0; width: 2rem; text-align: center;" id="bonus-dano-magia" placeholder="0" />
+        </div>
+        <div class="row">
+            <input type="checkbox" id="tem-teste-magia" />
+            <p>Teste de resistência:</p>
+            <select id="atributo-resistido-magia">
+                <option *ngFor="let atributo of atributos">{{atributo}}</option>
+            </select>
+            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+            <input style="margin-left:0; width: 2rem; text-align: center;" id="cd-magia" placeholder="0" />
+        </div>
+        <div class="row">
+            <p>Efeito do teste</p>
+            <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-magia" />
         </div>
         <div class="textarea">
             <p>Descrição: </p>
-            <textarea id="descricao-magia"></textarea>
+            <textarea placeholder="Você atira uma bola de fogo que se espalha por 40 metros..." id="descricao-magia"></textarea>
         </div>
         <div class="textarea">
             <p>Niveis superiores: </p>
-            <textarea id="niveis-superiores-magia"></textarea>
+            <textarea placeholder="Investindo 1 ponto de magia na bola de fogo você pode aumentar o alcance dela em..." id="niveis-superiores-magia"></textarea>
         </div>
-        <app-botao-adicionar [nomeComponente]="'magias'" />
+        <app-botao-adicionar nomeComponente="magias" />
     </div>
     }
     }
@@ -150,7 +175,7 @@
     <app-habilidade [habilidade]="habilidade" />
     }
 
-    <app-botao-pequeno [acao]="'expandir'" [nomeComponente]="'habilidades'" style="margin-left: 1.5rem;" />
+    <app-botao-pequeno acao="expandir" nomeComponente="habilidades" style="margin-left: 1.5rem;" />
 
     @if(accordion.adicionarHabilidadeEstaAberto){
     <div class="accordion">
@@ -174,7 +199,7 @@
             <p>Descrição: </p>
             <input id="descricao-habilidade" />
         </div>
-        <app-botao-adicionar [nomeComponente]="'habilidades'" />
+        <app-botao-adicionar nomeComponente="habilidades" />
     </div>
     }
     }

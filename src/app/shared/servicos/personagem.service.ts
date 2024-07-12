@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Ataque } from '../interfaces/ataque';
+import { Magia } from '../interfaces/magia';
 
 @Injectable({
   providedIn: 'root'
@@ -369,19 +371,24 @@ export class PersonagemService {
   }
 
   adicionarAtaque() {
-    let nome = (<HTMLInputElement>document.getElementById('nome-ataque')).value;
-    let atributoAcerto = (<HTMLSelectElement>document.getElementById('atributo-acerto-ataque')).value
-    let atributoDano = (<HTMLSelectElement>document.getElementById('atributo-dano-ataque')).value
-    let cd = Number((<HTMLInputElement>document.getElementById('cd-ataque')).value)
-    let atributoResistido = (<HTMLSelectElement>document.getElementById('atributo-resistido-ataque')).value
-    let dano = (<HTMLInputElement>document.getElementById('dano-ataque')).value
-    let tipo = (<HTMLInputElement>document.getElementById('tipo-dano-ataque')).value
-    let bonusAcerto = Number((<HTMLInputElement>document.getElementById('bonus-acerto')).value)
-    let bonusDano = Number((<HTMLInputElement>document.getElementById('bonus-dano')).value)
-    let descricao = (<HTMLInputElement>document.getElementById('descricao-ataque')).value
+    const nome = (<HTMLInputElement>document.getElementById('nome-ataque')).value;
+
     let temAcerto = false
+    const atributoAcerto = (<HTMLSelectElement>document.getElementById('atributo-acerto-ataque')).value
+    let bonusAcerto = Number((<HTMLInputElement>document.getElementById('bonus-acerto')).value)
+
     let temDano = false
+    const atributoDano = (<HTMLSelectElement>document.getElementById('atributo-dano-ataque')).value
+    const dano = (<HTMLInputElement>document.getElementById('dano-ataque')).value
+    let bonusDano = Number((<HTMLInputElement>document.getElementById('bonus-dano')).value)
+    const tipo = (<HTMLInputElement>document.getElementById('tipo-dano-ataque')).value
+
     let temTeste = false
+    const cd = Number((<HTMLInputElement>document.getElementById('cd-ataque')).value)
+    const atributoResistido = (<HTMLSelectElement>document.getElementById('atributo-resistido-ataque')).value
+
+    const descricao = (<HTMLInputElement>document.getElementById('descricao-ataque')).value
+    const alcance = (<HTMLInputElement>document.getElementById('alcance-ataque')).value
 
     if ((<HTMLInputElement>document.getElementById('tem-acerto')).checked) {
       temAcerto = true
@@ -393,8 +400,6 @@ export class PersonagemService {
       temTeste = true
     }
 
-    console.log(temAcerto)
-
     if (nome != '') {
       for (let atributo of this.atributos) {
         if (atributoAcerto === atributo.texto) {
@@ -405,18 +410,21 @@ export class PersonagemService {
         }
       }
 
-      let ataque = {
+      const ataque: Ataque = {
         nome: nome,
+        temAcerto: temAcerto,
+        atributoAcerto: atributoAcerto,
         bonusAcerto: bonusAcerto,
+        temDano: temDano,
+        atributoDano: atributoDano,
+        dano: dano,
         bonusDano: bonusDano,
+        tipoDano: tipo,
+        temTeste: temTeste,
         cd: cd,
         atributoResistido: atributoResistido,
-        temAcerto: temAcerto,
-        temDano: temDano,
-        temTeste: temTeste,
-        dano: dano,
-        tipo: tipo,
-        descricao: descricao
+        alcance: alcance,
+        descricao: descricao,
       }
 
       this.acoes.ataques.push(ataque)
@@ -455,25 +463,13 @@ export class PersonagemService {
     let atributo = (<HTMLSelectElement>document.getElementById('atributo-magia')).value
     let tempoExecucao = (<HTMLSelectElement>document.getElementById('tempo-execucao-magia')).value
     let nivel = (<HTMLSelectElement>document.getElementById('nivel-circulo')).value
-    let custoPm = (<HTMLInputElement>document.getElementById('custo-pm-magia')).value
+    let custoPm = Number((<HTMLInputElement>document.getElementById('custo-pm-magia')).value)
     let alcance = (<HTMLInputElement>document.getElementById('alcance-magia')).value
     let duracao = (<HTMLInputElement>document.getElementById('duracao-magia')).value
     let niveisSuperiores = (<HTMLInputElement>document.getElementById('niveis-superiores-magia')).value
 
-    let magia = {
-      nome: nome,
-      descricao: descricao,
-      atributo: atributo,
-      tempoExecucao: tempoExecucao,
-      nivel: nivel,
-      custoPm: custoPm,
-      alcance: alcance,
-      duracao: duracao,
-      niveisSuperiores: niveisSuperiores
-    }
 
     if (nome != '' && descricao != '') {
-      this.acoes.magias.push(magia)
     }
   }
 
