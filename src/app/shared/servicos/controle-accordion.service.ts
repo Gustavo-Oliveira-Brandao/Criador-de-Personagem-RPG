@@ -11,6 +11,6 @@ export class ControleAccordionService {
   adicionarAtaqueEstaAberto : boolean = false;
   adicionarMagiaEstaAberto : boolean = false;
   adicionarHabilidadeEstaAberto : boolean = false;
-  adicionarItemEstaAberto : boolean = false;
+  adicionarInventarioEstaAberto : boolean = false;
   
 }

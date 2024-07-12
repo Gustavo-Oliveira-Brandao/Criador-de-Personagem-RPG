@@ -57,17 +57,17 @@
     <app-habilidade [habilidade]="habilidade" />
     }
 
-    <app-botao-pequeno acao="expandir" nomeComponente="habilidades" style="margin-left: 1.5rem;" />
+    <app-botao-pequeno acao="expandir" nomeComponente="habilidades" style="margin-left: 1rem;" />
 
     @if(accordion.adicionarHabilidadeEstaAberto){
     <div class="accordion">
         <div class="row">
             <p>Nome: </p>
-            <input id="nome-habilidade" />
+            <input placeholder="Treinamento élfico" id="nome-habilidade" />
         </div>
         <div class="row">
             <p>Custo: </p>
-            <select id="custo">
+            <select id="tempo-execucao-habilidade">
                 <option *ngFor="let custo of custos">{{custo}}</option>
             </select>
         </div>
@@ -77,9 +77,9 @@
                 <option *ngFor="let origem of origens">{{origem}}</option>
             </select>
         </div>
-        <div class="row">
+        <div>
             <p>Descrição: </p>
-            <input id="descricao-habilidade" />
+            <textarea placeholder="Você tem proficiência com arcos longos..." id="descricao-habilidade" ></textarea>
         </div>
         <app-botao-adicionar nomeComponente="habilidades" />
     </div>

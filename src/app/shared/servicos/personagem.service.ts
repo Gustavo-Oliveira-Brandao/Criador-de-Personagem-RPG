@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Ataque } from '../classes/ataque';
 import { Magia } from '../classes/magia';
+import { IHabilidade } from '../interfaces/ihabilidade';
+import { IProficiencia } from '../interfaces/iproficiencia';
+import { IItem } from '../interfaces/iitem';
 
 @Injectable({
   providedIn: 'root'
@@ -355,8 +358,8 @@ export class PersonagemService {
       tipo = nome.value;
       texto = descricao.value;
       if (tipo != '' && texto != '') {
-        let proficiencia = {
-          nome: tipo,
+        let proficiencia: IProficiencia = {
+          tipo: tipo,
           descricao: texto
         }
         this.proficiencias.push(proficiencia);
@@ -371,15 +374,22 @@ export class PersonagemService {
   }
 
   adicionarAtaque() {
+    if ((<HTMLInputElement>document.getElementById('nome-ataque')).value != '') {
       this.acoes.ataques.push(new Ataque(this.atributos))
     }
+  }
 
   removerAtaque(index: number) {
     this.acoes.ataques.splice(index, 1)
   }
 
   adicionarMagia() {
-    this.acoes.magias.push(new Magia(this.atributos))
+    if ((<HTMLInputElement>document.getElementById('nome-ataque')).value != '' && (<HTMLInputElement>document.getElementById('descricao-ataque')).value != '') {
+      this.acoes.magias.push(new Magia(this.atributos))
+      if ((<HTMLInputElement>document.getElementById("tem-dano")).checked) {
+        this.acoes.ataques.push(new Magia(this.atributos))
+      }
+    }
   }
 
   removerMagia(index: number) {
@@ -387,16 +397,16 @@ export class PersonagemService {
   }
 
   adicionarHabilidade() {
-    let nome = (<HTMLInputElement>document.getElementById('nome-habilidade')).value;
-    let descricao = (<HTMLInputElement>document.getElementById('descricao-habilidade')).value;
-    let custo = (<HTMLSelectElement>document.getElementById('custo')).value
-    let origemHabilidade = (<HTMLSelectElement>document.getElementById('origem-habilidade')).value;
+    const nome = (<HTMLInputElement>document.getElementById('nome-habilidade')).value;
+    const descricao = (<HTMLInputElement>document.getElementById('descricao-habilidade')).value;
+    const tempoExecucao = (<HTMLSelectElement>document.getElementById('tempo-execucao-habilidade')).value
+    const origem = (<HTMLSelectElement>document.getElementById('origem-habilidade')).value;
 
-    let habilidade = {
+    const habilidade: IHabilidade = {
       nome: nome,
       descricao: descricao,
-      custo: custo,
-      origem: origemHabilidade
+      tempoExecucao: tempoExecucao,
+      origem: origem
     }
 
     if (nome != '' && descricao != '') {
@@ -409,8 +419,21 @@ export class PersonagemService {
   }
 
   adicionarItemInventario() {
-    console.log('teste')
+    const nome = (<HTMLInputElement>document.getElementById('nome-item')).value
+    const descricao = (<HTMLInputElement>document.getElementById('descricao-item')).value
+    const peso = (<HTMLInputElement>document.getElementById('peso-item')).value
+    const valor = (<HTMLInputElement>document.getElementById('valor-item')).value
 
+    const item : IItem = {
+      nome: nome,
+      descricao: descricao,
+      peso: peso,
+      valor: valor
+    }
+
+    if(nome != ''){
+      this.items.push(item)
+    }
   }
 
   removerItemInventario(index: number) {

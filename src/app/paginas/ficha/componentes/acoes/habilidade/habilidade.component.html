@@ -1,8 +1,16 @@
-<div (click)="expandir()">
-  <p class="nome">{{habilidade.nome}}</p>
-  <p>Origem: {{habilidade.origem}}</p>
+<div class="container" (click)="expandir()">
+  <p class="titulo">{{habilidade.nome}}</p>
+
+  <div class="row">
+    <p class="nomeCampo">Tempo de execução:</p>
+    <p> {{habilidade.tempoExecucao}}</p>
+  </div>
   @if(habilidadeEstaExpandida){
-  <p>Custo: {{habilidade.custo}}</p>
-  <p>{{habilidade.descricao}}</p>
+  <div class="row">
+    <p class="nomeCampo">Origem:</p>
+    <p> {{habilidade.origem}}</p>
+  </div>
+  <p class="">{{habilidade.descricao}}</p>
+
   }
 </div>

@@ -1,20 +1,34 @@
-div{
+.container {
   background-color: var(--cor-secundaria);
-  border-radius: 6px;
-  padding: 16px;
-  width: 85%;
+  border-radius: 10px;
+  padding: 1rem 2rem 1rem 2rem;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
   cursor: pointer;
 
-  p{
-    font-size: 14px;
+  .titulo {
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: bolder;
+    color: var(--cor-destaque);
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  .nome{
-    color: var(--cor-destaque);
-    font-weight: bold;
-    text-transform: uppercase;
+  .row {
+    display: flex;
+
+    .nomeCampo {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+
   }
 }

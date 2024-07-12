@@ -14,7 +14,7 @@ export class AdicionarAtaqueMagiaComponent {
 
   @Input() public ehMagia : boolean
   
-  atributos = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
+  atributos = ["Sem atributo", "Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
 
   resistencias = ["Fortitude", "Reflexos", "Vontade"]
 

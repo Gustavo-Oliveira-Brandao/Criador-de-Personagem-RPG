@@ -1,0 +1,22 @@
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+
+    .texto-item{
+        width: 9rem;
+    }
+    .valor-item{
+        width: 4rem;
+    }
+    p{
+        border-radius: 6px;
+        background-color: var(--cor-secundaria);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 8px;
+        font-size: small;
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+}

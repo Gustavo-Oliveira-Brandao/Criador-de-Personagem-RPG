@@ -30,8 +30,8 @@ export class BotaoPequenoComponent {
     if(nomeComponente == 'magias'){
       this.controleAccordion.adicionarMagiaEstaAberto = !this.controleAccordion.adicionarMagiaEstaAberto
     }
-    if(nomeComponente == 'item'){
-      this.controleAccordion.adicionarItemEstaAberto = !this.controleAccordion.adicionarItemEstaAberto
+    if(nomeComponente == 'inventario'){
+      this.controleAccordion.adicionarInventarioEstaAberto = !this.controleAccordion.adicionarInventarioEstaAberto
     }
   }
   

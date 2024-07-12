@@ -9,6 +9,7 @@ import { ProficienciasComponent } from './paginas/ficha/componentes/proficiencia
 import { ControleFichaService } from './shared/servicos/controle-ficha.service';
 import { AcoesComponent } from './paginas/ficha/componentes/acoes/acoes.component';
 import { InfoPersonagemComponent } from './paginas/ficha/componentes/info-personagem/info-personagem.component';
+import { InventarioComponent } from './paginas/ficha/componentes/inventario/inventario.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { InfoPersonagemComponent } from './paginas/ficha/componentes/info-person
     CardResistenciasComponent,
     ProficienciasComponent,
     AcoesComponent,
-    InfoPersonagemComponent],
+    InfoPersonagemComponent,
+    InventarioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,7 +1,12 @@
 <div class="accordion">
     <div class="row">
         <p>Nome: </p>
+        @if(!ehMagia){
         <input placeholder="Machado grande" id="nome-ataque" />
+        }
+        @if(ehMagia){
+        <input placeholder="Bola de fogo" id="nome-ataque" />
+        }
     </div>
     @if(ehMagia){
     <div class="row">
@@ -25,6 +30,7 @@
         <input style="width: 5rem;" placeholder="1 hora" id="duracao-magia" />
     </div>
     }
+
     <div class="row">
         <p>Alcance: </p>
         <input style="width: 5rem;" placeholder="30 pés" id="alcance-ataque" />
@@ -52,7 +58,12 @@
     </div>
     <div class="row">
         <p>Tipo de dano: </p>
+        @if(!ehMagia){
         <input style="width: 8rem;" placeholder="Concussão" id="tipo-dano-ataque" />
+        }
+        @if(ehMagia){
+        <input style="width: 8rem;" placeholder="Fogo" id="tipo-dano-ataque" />
+        }
     </div>
     <div class="row">
         <input type="checkbox" id="tem-teste" />
@@ -83,6 +94,6 @@
     <app-botao-adicionar nomeComponente="ataques" />
     }
     @if(ehMagia){
-        <app-botao-adicionar nomeComponente="magias" />
+    <app-botao-adicionar nomeComponente="magias" />
     }
 </div>

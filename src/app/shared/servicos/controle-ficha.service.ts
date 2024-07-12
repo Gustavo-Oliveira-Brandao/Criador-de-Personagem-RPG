@@ -28,7 +28,7 @@ export class ControleFichaService {
     }
     if (nomeComponente == 'inventario') {
       this.personagem.adicionarItemInventario()
-      this.controleAccordion.adicionarItemEstaAberto = !this.controleAccordion.adicionarItemEstaAberto
+      this.controleAccordion.adicionarInventarioEstaAberto = !this.controleAccordion.adicionarInventarioEstaAberto
     }
   }
 
@@ -51,6 +51,7 @@ export class ControleFichaService {
     localStorage.setItem('resistencias', JSON.stringify(this.personagem.resistencias))
     localStorage.setItem('proficiencias', JSON.stringify(this.personagem.proficiencias))
     localStorage.setItem('acoes', JSON.stringify(this.personagem.acoes))
+    localStorage.setItem('itens', JSON.stringify(this.personagem.items))
     alert('Personagem salvo!')
   }
 
@@ -62,6 +63,7 @@ export class ControleFichaService {
     const pericias = localStorage.getItem('pericias')
     const proficiencias = localStorage.getItem('proficiencias')
     const acoes = localStorage.getItem('acoes')
+    const itens = localStorage.getItem('itens')
     if (info == undefined || atributos == undefined || resistencias == undefined || pericias == undefined) {
       console.log("Personagem não existe")
     } else {
@@ -71,15 +73,21 @@ export class ControleFichaService {
       this.personagem.pericias = JSON.parse(pericias)
     }
     if (proficiencias == undefined) {
-      console.log("Sem proficiencias")
+      console.log("Sem proficiencias!")
     } else {
       this.personagem.proficiencias = JSON.parse(proficiencias)
     }
     if (acoes == undefined) {
-      console.log("Sem ações")
+      console.log("Sem ações!")
     } else {
       this.personagem.acoes = JSON.parse(acoes)
     }
+    if (itens == undefined){
+      console.log('Sem itens!')
+    } else {
+      this.personagem.items = JSON.parse(itens)
+    }
+
   }
 }
 

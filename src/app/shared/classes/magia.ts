@@ -1,14 +1,15 @@
+import { IMagia } from "../interfaces/imagia";
 import { Ataque } from "./ataque";
 
-export class Magia extends Ataque {
+export class Magia extends Ataque implements IMagia {
 
-    protected tempoExecucao: string;
-    protected nivelMagia: string;
-    protected pontosMagia: number;
-    protected duracao: string;
-    protected niveisSuperiores?: string;
+    tempoExecucao
+    nivelMagia
+    pontosMagia
+    duracao
+    niveisSuperiores
 
-    constructor(atributos : any){
+    constructor(atributos: any) {
         super(atributos)
         this.tempoExecucao = (<HTMLSelectElement>document.getElementById('tempo-execucao-magia')).value
         this.nivelMagia = (<HTMLSelectElement>document.getElementById('nivel-circulo')).value
