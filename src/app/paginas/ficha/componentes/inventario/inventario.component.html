@@ -8,9 +8,10 @@
         <p class="texto-item">Descrição</p>
         <p class="valor-item">Peso</p>
         <p class="valor-item">Valor</p>
+        <span></span>
     </div>
     @for(item of personagem.items; track $index; ){
-    <app-item [item]="item" />
+    <app-item [item]="item" [index]="$index" />
     }
     <app-botao-pequeno nomeComponente="inventario" acao="expandir" />
 

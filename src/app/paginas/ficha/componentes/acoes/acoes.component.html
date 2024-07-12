@@ -1,11 +1,18 @@
 <div class="container card">
+
+    <div style="display: flex; align-items: center; margin-left: auto; margin-right: auto; width: 10rem;">
+        <img style="width: 2rem; height: 2rem; margin-right: 1rem;" src="assets/attacks.svg" alt="Combate">
+        <h2 style="text-align: center;">Combate</h2>
+    </div>
+    <app-status />
+
     <div class="nav-row">
         <i class="fa-solid fa-arrow-left" (click)="alterarAba(-1)"></i>
         <div class="aba">
             @switch(abaIndex){
             @case(0){
-            <img src="assets/attacks.svg" alt="Combate">
-            <h2 style="text-align: center;">Combate</h2>
+            <img src="assets/espada.svg" alt="Ataques" />
+            <h2 style="text-align: center;">Ataques</h2>
             }
             @case(1){
             <img src="assets/white-book.svg" alt="grimório" />
@@ -20,70 +27,88 @@
         <i class="fa-solid fa-arrow-right" (click)="alterarAba(1)"></i>
     </div>
 
-    @switch(abaIndex){
+    <div class="abas">
+        @switch(abaIndex){
 
-    @case(0){
-    <app-status />
-    <h3 style="text-align: center; margin-bottom: 0;">Ataques e conjuração</h3>
-    <div class="ataque-row">
-        <p class="nome-ataque">Nome</p>
-        <p class="bonus-ataque">Bônus</p>
-        <p class="dano-ataque">Dano</p>
+        @case(0){
+        <div class="ataque-row">
+            <p class="nome-ataque">Nome</p>
+            <p class="bonus-ataque">Bônus</p>
+            <p class="dano-ataque">Dano</p>
+            <span></span>
+        </div>
+
+        @for(ataque of personagem.acoes.ataques; track $index){
+        <app-ataques [ataque]="ataque" [index]="$index" />
+        }
+
+        <app-botao-pequeno acao="expandir" nomeComponente="ataques" style="margin-left: 0.5rem;" />
+
+        @if(accordion.adicionarAtaqueEstaAberto){
+        <app-adicionar-ataque-magia [ehMagia]="false" />
+        }
+        }
+        @case(1){
+        <h3 class="titulo-nivel">1º nivel de magia</h3>
+        @for(magia of personagem.acoes.magias.nivel1; track $index){
+        <app-magia [magia]="magia" nivel="1" />
+        }
+        <h3 class="titulo-nivel">2º nivel de magia</h3>
+        @for(magia of personagem.acoes.magias.nivel2; track $index){
+        <app-magia [magia]="magia" nivel="2" />
+        }
+        <h3 class="titulo-nivel">3º nivel de magia</h3>
+        @for(magia of personagem.acoes.magias.nivel3; track $index){
+        <app-magia [magia]="magia" nivel="3" />
+        }
+        <h3 class="titulo-nivel">4º nivel de magia</h3>
+        @for(magia of personagem.acoes.magias.nivel4; track $index){
+        <app-magia [magia]="magia" nivel="4" />
+        }
+        <h3 class="titulo-nivel">5º nivel de magia</h3>
+        @for(magia of personagem.acoes.magias.nivel5; track $index){
+        <app-magia [magia]="magia" nivel="5" />
+        }
+
+        <app-botao-pequeno acao="expandir" nomeComponente="magias" style="margin-left: 1rem;" />
+
+        @if(accordion.adicionarMagiaEstaAberto){
+        <app-adicionar-ataque-magia [ehMagia]="true" />
+        }
+        }
+        @case(2){
+        @for(habilidade of personagem.acoes.habilidades; track $index){
+        <app-habilidade [habilidade]="habilidade" />
+        }
+
+        <app-botao-pequeno acao="expandir" nomeComponente="habilidades" style="margin-left: 1rem;" />
+
+        @if(accordion.adicionarHabilidadeEstaAberto){
+        <div class="accordion">
+            <div class="row">
+                <p>Nome: </p>
+                <input placeholder="Treinamento élfico" id="nome-habilidade" />
+            </div>
+            <div class="row">
+                <p>Custo: </p>
+                <select id="tempo-execucao-habilidade">
+                    <option *ngFor="let custo of custos">{{custo}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <p>Origem: </p>
+                <select id="origem-habilidade">
+                    <option *ngFor="let origem of origens">{{origem}}</option>
+                </select>
+            </div>
+            <div>
+                <p>Descrição: </p>
+                <textarea placeholder="Você tem proficiência com arcos longos..." id="descricao-habilidade"></textarea>
+            </div>
+            <app-botao-adicionar nomeComponente="habilidades" />
+        </div>
+        }
+        }
+        }
     </div>
-
-    @for(ataque of personagem.acoes.ataques; track $index){
-    <app-ataques [ataque]="ataque" />
-    }
-
-    <app-botao-pequeno acao="expandir" nomeComponente="ataques" style="margin-left: 0.5rem;" />
-
-    @if(accordion.adicionarAtaqueEstaAberto){
-    <app-adicionar-ataque-magia [ehMagia]="false" />
-    }
-    }
-    @case(1){
-    @for(magia of personagem.acoes.magias; track $index){
-    <app-magia [magia]="magia" />
-    }
-
-    <app-botao-pequeno acao="expandir" nomeComponente="magias" style="margin-left: 1rem;" />
-
-    @if(accordion.adicionarMagiaEstaAberto){
-    <app-adicionar-ataque-magia [ehMagia]="true" />
-    }
-    }
-    @case(2){
-    @for(habilidade of personagem.acoes.habilidades; track $index){
-    <app-habilidade [habilidade]="habilidade" />
-    }
-
-    <app-botao-pequeno acao="expandir" nomeComponente="habilidades" style="margin-left: 1rem;" />
-
-    @if(accordion.adicionarHabilidadeEstaAberto){
-    <div class="accordion">
-        <div class="row">
-            <p>Nome: </p>
-            <input placeholder="Treinamento élfico" id="nome-habilidade" />
-        </div>
-        <div class="row">
-            <p>Custo: </p>
-            <select id="tempo-execucao-habilidade">
-                <option *ngFor="let custo of custos">{{custo}}</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Origem: </p>
-            <select id="origem-habilidade">
-                <option *ngFor="let origem of origens">{{origem}}</option>
-            </select>
-        </div>
-        <div>
-            <p>Descrição: </p>
-            <textarea placeholder="Você tem proficiência com arcos longos..." id="descricao-habilidade"></textarea>
-        </div>
-        <app-botao-adicionar nomeComponente="habilidades" />
-    </div>
-    }
-    }
-    }
 </div>

@@ -298,7 +298,13 @@ export class PersonagemService {
 
     ataques: [],
 
-    magias: [],
+    magias: {
+      nivel1: [],
+      nivel2: [],
+      nivel3: [],
+      nivel4: [],
+      nivel5: [],
+    },
 
   }
 
@@ -385,15 +391,45 @@ export class PersonagemService {
 
   adicionarMagia() {
     if ((<HTMLInputElement>document.getElementById('nome-ataque')).value != '' && (<HTMLInputElement>document.getElementById('descricao-ataque')).value != '') {
-      this.acoes.magias.push(new Magia(this.atributos))
-      if ((<HTMLInputElement>document.getElementById("tem-dano")).checked) {
-        this.acoes.ataques.push(new Magia(this.atributos))
+      let nivelMagia = Number((<HTMLSelectElement>document.getElementById('nivel-circulo')).value)
+      if (nivelMagia == 1) {
+        this.acoes.magias.nivel1.push(new Magia(this.atributos))
+      }
+      if (nivelMagia == 2) {
+        this.acoes.magias.nivel2.push(new Magia(this.atributos))
+      }
+      if (nivelMagia == 3) {
+        this.acoes.magias.nivel3.push(new Magia(this.atributos))
+      }
+      if (nivelMagia == 4) {
+        this.acoes.magias.nivel4.push(new Magia(this.atributos))
+      }
+      if (nivelMagia == 5) {
+        this.acoes.magias.nivel5.push(new Magia(this.atributos))
       }
     }
+    if ((<HTMLInputElement>document.getElementById("tem-dano")).checked) {
+      this.acoes.ataques.push(new Magia(this.atributos))
+    }
+    console.log(this.acoes.magias)
   }
 
-  removerMagia(index: number) {
-    this.acoes.magias.splice(index, 1)
+  removerMagia(index: number, nivel: number) {
+    if (nivel == 1) {
+      this.acoes.magias.nivel1.splice(index, 1)
+    }
+    if (nivel == 2) {
+      this.acoes.magias.nivel2.splice(index, 1)
+    }
+    if (nivel == 3) {
+      this.acoes.magias.nivel3.splice(index, 1)
+    }
+    if (nivel == 4) {
+      this.acoes.magias.nivel4.splice(index, 1)
+    }
+    if (nivel == 5) {
+      this.acoes.magias.nivel5.splice(index, 1)
+    }
   }
 
   adicionarHabilidade() {
@@ -424,20 +460,20 @@ export class PersonagemService {
     const peso = (<HTMLInputElement>document.getElementById('peso-item')).value
     const valor = (<HTMLInputElement>document.getElementById('valor-item')).value
 
-    const item : IItem = {
+    const item: IItem = {
       nome: nome,
       descricao: descricao,
       peso: peso,
       valor: valor
     }
 
-    if(nome != ''){
+    if (nome != '') {
       this.items.push(item)
     }
   }
 
   removerItemInventario(index: number) {
-    console.log('teste')
+    this.items.splice(index, 1)
 
   }
 

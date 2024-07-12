@@ -13,7 +13,6 @@ button:hover {
 }
 
 .delete {
-    position: absolute;
-    right: 0;
-    top: 35%;
+    position: static;
+    margin: 0;
 }

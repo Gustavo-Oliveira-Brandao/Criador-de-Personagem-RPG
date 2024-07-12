@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { BotaoPequenoComponent } from "../../../../../shared/componentes/botao-pequeno/botao-pequeno.component";
 
 @Component({
   selector: 'app-magia',
   standalone: true,
-  imports: [],
+  imports: [BotaoPequenoComponent],
   templateUrl: './magia.component.html',
   styleUrl: './magia.component.scss'
 })

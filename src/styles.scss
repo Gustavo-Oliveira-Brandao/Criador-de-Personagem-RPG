@@ -4,13 +4,14 @@
   --cor-secundaria: #313a47;
   --cor-destaque: #f75a68;
   --cor-fonte: #fff;
-  --fonte: "Poppins", sans-serif;
+  --fonte: "Almendra", serif;
   --borda: 1px solid gray;
 }
 
 html {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 body {

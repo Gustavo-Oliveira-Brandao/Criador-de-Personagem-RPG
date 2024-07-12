@@ -39,7 +39,7 @@ export class ControleFichaService {
     if (nomeComponente == "ataques") {
       this.personagem.removerAtaque(index)
     }
-    if (nomeComponente == "item") {
+    if (nomeComponente == "inventario") {
       this.personagem.removerItemInventario(index)
     }
   }

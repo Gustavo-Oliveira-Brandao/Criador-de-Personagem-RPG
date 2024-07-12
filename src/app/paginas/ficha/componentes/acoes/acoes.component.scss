@@ -2,7 +2,7 @@
     border-radius: 10px;
     width: 33rem;
     height: 44.5rem;
-    overflow: auto;
+    overflow:auto;
 
     .nav-row {
         margin-top: 1rem;
@@ -16,12 +16,14 @@
             margin-left: auto;
             margin-right: auto;
             width: 10rem;
+            cursor: pointer;
 
             img {
                 width: 2rem;
                 height: 2rem;
                 margin-right: 1rem;
             }
+
         }
 
         i {
@@ -40,56 +42,71 @@
         }
     }
 
-    .accordion {
-        background-color: var(--cor-secundaria);
-        border-radius: 10px;
-        padding: 1rem;
-        width: 90%;
-        margin: 0 auto 1rem auto;
-    
-        .row {
+    .abas {
+        overflow-y: auto;
+        .titulo-nivel{
+            margin-left: 1rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+        .accordion {
+            background-color: var(--cor-secundaria);
+            border-radius: 10px;
+            padding: 1rem;
+            width: 90%;
+            margin: 0 auto 1rem auto;
+
+            .row {
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin-left: 1rem;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: var(--borda);
+                }
+
+                select {
+                    margin-left: 1rem;
+                    background-color: var(--cor-secundaria);
+                    border: none;
+                }
+
+                select:hover {
+                    cursor: pointer;
+                    color: var(--cor-destaque);
+                }
+            }
+        }
+
+        .ataque-row {
             display: flex;
-            align-items: center;
-    
-            input {
-                margin-left: 1rem;
-                background-color: transparent;
-                border: none;
-                border-bottom: var(--borda);
+            justify-content: space-around;
+            width: 100%;
+
+            .nome-ataque {
+                width: 30%;
+                padding: 8px;
+                margin-bottom: 0;
             }
-    
-            select {
-                margin-left: 1rem;
-                background-color: var(--cor-secundaria);
-                border: none;
+
+            .bonus-ataque {
+                width: 10%;
+                padding: 8px;
+                margin-bottom: 0;
             }
-    
-            select:hover {
-                cursor: pointer;
-                color: var(--cor-destaque);
+
+            .dano-ataque {
+                width: 35%;
+                padding: 8px;
+                margin-bottom: 0;
+            }
+
+            span {
+                width: 2rem;
+                height: 2rem;
             }
         }
     }
-
-    .ataque-row {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-
-        .nome-ataque {
-            width: 30%;
-            padding: 8px;
-        }
-
-        .bonus-ataque {
-            width: 20%;
-            padding: 8px;
-        }
-
-        .dano-ataque {
-            width: 30%;
-            padding: 8px;
-        }
-    }
-
 }

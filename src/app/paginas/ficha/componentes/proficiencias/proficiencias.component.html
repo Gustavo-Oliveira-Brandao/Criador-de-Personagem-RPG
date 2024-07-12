@@ -4,7 +4,7 @@
         @for(proficiencia of proficiencias.proficiencias; track $index; ){
         <div class="proficiencia">
             <app-proficiencia [proficiencia]="proficiencia" />
-            <app-botao-pequeno nomeComponente="proficiencia" acao="deletar" [index]="$index" />
+            <app-botao-pequeno style="position: absolute; top: 0; right: 0;" nomeComponente="proficiencia" acao="deletar" [index]="$index" />
         </div>
         }
     </div>

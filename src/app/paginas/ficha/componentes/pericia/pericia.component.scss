@@ -11,6 +11,10 @@
 
     .valor {
         width: 2rem;
+
+        p {
+            font-size: 17px;
+        }
     }
 
     .atributo {
@@ -25,9 +29,11 @@
 
     p {
         margin: unset;
+        font-size: 15px;
     }
 
     button {
+        font-size: 15px;
         border: none;
         background-color: transparent;
     }

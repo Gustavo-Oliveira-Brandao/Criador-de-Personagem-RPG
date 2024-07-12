@@ -1,10 +1,16 @@
+<div (click)="expandir()" class="magia">
+    <p style="color: var(--cor-destaque);">{{magia.nome}}</p>
+    <app-botao-pequeno acao="deletar" nomeComponente="magias" [nivelMagia]="magia.nivelMagia" />
+</div>
+
+@if(magiaEstaExpandida){
 <div class="magia-card">
-    <div (click)="expandir()" style="cursor: pointer; display: flex; justify-content: space-between;">
+    <div style="display: flex; justify-content: space-between;">
         <p class="titulo">{{magia.nome}}</p>
         <p style="font-weight: bold;">{{magia.nivelMagia}}º nivel @if(magia.atributoAcerto != 'Sem atributo'){ -
             {{magia.atributoAcerto}} }</p>
     </div>
-    @if(magiaEstaExpandida){
+
     <div class="info">
         <div class="row">
             <p class="nomeCampo">Pontos de magia: </p>
@@ -22,10 +28,22 @@
             <p class="nomeCampo">Duração: </p>
             <p> {{magia.duracao}}</p>
         </div>
+        @if(magia.temDano){
+        <div class="row">
+            <p class="nomeCampo">Dano: </p>
+            <p> {{magia.dano}} {{magia.tipoDano}}</p>
+        </div>
+        }
+        @if(magia.temTeste){
+        <div class="row">
+            <p class="nomeCampo">Teste de resistência: </p>
+            <p> {{magia.atributoResistido}}</p>
+        </div>
         <div class="row">
             <p class="nomeCampo">Efeito do teste: </p>
             <p> {{magia.efeitoTeste}}</p>
         </div>
+        }
     </div>
 
     <p class="descricao">{{magia.descricao}}</p>
@@ -34,5 +52,7 @@
         <p style="font-weight: bold; font-size: 13px;">Em níveis superiores: </p>
         <p class="descricao">{{magia.niveisSuperiores}}</p>
     </div>
-    }
+
 </div>
+
+}
