@@ -2,6 +2,6 @@ import { Ataque } from './ataque';
 
 describe('Ataque', () => {
   it('should create an instance', () => {
-    expect(new Ataque()).toBeTruthy();
+    expect(new Ataque('s')).toBeTruthy();
   });
 });

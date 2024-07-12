@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Ataque } from '../interfaces/ataque';
-import { Magia } from '../interfaces/magia';
+import { Ataque } from '../classes/ataque';
+import { Magia } from '../classes/magia';
 
 @Injectable({
   providedIn: 'root'
@@ -371,68 +371,19 @@ export class PersonagemService {
   }
 
   adicionarAtaque() {
-    const nome = (<HTMLInputElement>document.getElementById('nome-ataque')).value;
-
-    let temAcerto = false
-    const atributoAcerto = (<HTMLSelectElement>document.getElementById('atributo-acerto-ataque')).value
-    let bonusAcerto = Number((<HTMLInputElement>document.getElementById('bonus-acerto')).value)
-
-    let temDano = false
-    const atributoDano = (<HTMLSelectElement>document.getElementById('atributo-dano-ataque')).value
-    const dano = (<HTMLInputElement>document.getElementById('dano-ataque')).value
-    let bonusDano = Number((<HTMLInputElement>document.getElementById('bonus-dano')).value)
-    const tipo = (<HTMLInputElement>document.getElementById('tipo-dano-ataque')).value
-
-    let temTeste = false
-    const cd = Number((<HTMLInputElement>document.getElementById('cd-ataque')).value)
-    const atributoResistido = (<HTMLSelectElement>document.getElementById('atributo-resistido-ataque')).value
-
-    const descricao = (<HTMLInputElement>document.getElementById('descricao-ataque')).value
-    const alcance = (<HTMLInputElement>document.getElementById('alcance-ataque')).value
-
-    if ((<HTMLInputElement>document.getElementById('tem-acerto')).checked) {
-      temAcerto = true
+      this.acoes.ataques.push(new Ataque(this.atributos))
     }
-    if ((<HTMLInputElement>document.getElementById("tem-dano")).checked) {
-      temDano = true
-    }
-    if ((<HTMLInputElement>document.getElementById('tem-teste')).checked) {
-      temTeste = true
-    }
-
-    if (nome != '') {
-      for (let atributo of this.atributos) {
-        if (atributoAcerto === atributo.texto) {
-          bonusAcerto += atributo.modificador
-        }
-        if (atributoDano === atributo.texto) {
-          bonusDano += atributo.modificador
-        }
-      }
-
-      const ataque: Ataque = {
-        nome: nome,
-        temAcerto: temAcerto,
-        atributoAcerto: atributoAcerto,
-        bonusAcerto: bonusAcerto,
-        temDano: temDano,
-        atributoDano: atributoDano,
-        dano: dano,
-        bonusDano: bonusDano,
-        tipoDano: tipo,
-        temTeste: temTeste,
-        cd: cd,
-        atributoResistido: atributoResistido,
-        alcance: alcance,
-        descricao: descricao,
-      }
-
-      this.acoes.ataques.push(ataque)
-    }
-  }
 
   removerAtaque(index: number) {
     this.acoes.ataques.splice(index, 1)
+  }
+
+  adicionarMagia() {
+    this.acoes.magias.push(new Magia(this.atributos))
+  }
+
+  removerMagia(index: number) {
+    this.acoes.magias.splice(index, 1)
   }
 
   adicionarHabilidade() {
@@ -455,26 +406,6 @@ export class PersonagemService {
 
   removerHabilidade(index: number) {
     this.acoes.habilidades.splice(index, 1);
-  }
-
-  adicionarMagia() {
-    let nome = (<HTMLInputElement>document.getElementById('nome-magia')).value
-    let descricao = (<HTMLInputElement>document.getElementById('descricao-magia')).value
-    let atributo = (<HTMLSelectElement>document.getElementById('atributo-magia')).value
-    let tempoExecucao = (<HTMLSelectElement>document.getElementById('tempo-execucao-magia')).value
-    let nivel = (<HTMLSelectElement>document.getElementById('nivel-circulo')).value
-    let custoPm = Number((<HTMLInputElement>document.getElementById('custo-pm-magia')).value)
-    let alcance = (<HTMLInputElement>document.getElementById('alcance-magia')).value
-    let duracao = (<HTMLInputElement>document.getElementById('duracao-magia')).value
-    let niveisSuperiores = (<HTMLInputElement>document.getElementById('niveis-superiores-magia')).value
-
-
-    if (nome != '' && descricao != '') {
-    }
-  }
-
-  removerMagia(index: number) {
-    this.acoes.magias.splice(index, 1)
   }
 
   adicionarItemInventario() {

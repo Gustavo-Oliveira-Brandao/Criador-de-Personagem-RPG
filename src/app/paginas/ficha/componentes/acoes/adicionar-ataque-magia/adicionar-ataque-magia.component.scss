@@ -1,0 +1,32 @@
+.accordion {
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 90%;
+    margin: 0 auto 1rem auto;
+
+    .row {
+        display: flex;
+        align-items: center;
+
+        input {
+            margin-left: 1rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: var(--borda);
+        }
+
+
+
+        select {
+            margin-left: 1rem;
+            background-color: var(--cor-secundaria);
+            border: none;
+        }
+
+        select:hover {
+            cursor: pointer;
+            color: var(--cor-destaque);
+        }
+    }
+}

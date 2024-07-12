@@ -38,56 +38,7 @@
     <app-botao-pequeno acao="expandir" nomeComponente="ataques" style="margin-left: 0.5rem;" />
 
     @if(accordion.adicionarAtaqueEstaAberto){
-    <div class="accordion">
-        <div class="row">
-            <p>Nome: </p>
-            <input placeholder="Machado grande" id="nome-ataque" />
-        </div>
-        <div class="row">
-            <input checked type="checkbox" id="tem-acerto" />
-            <p>Ataque: </p>
-            <select id="atributo-acerto-ataque">
-                <option *ngFor="let atributo of atributos">{{ atributo }}</option>
-            </select>
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <input type="number" style="width: 2rem; margin-left: 0; text-align: center;" id="bonus-acerto"
-                placeholder="0" />
-        </div>
-        <div class="row">
-            <input checked type="checkbox" id="tem-dano" />
-            <p>Dano: </p>
-            <input style="width: 3rem;" placeholder="1d12" id="dano-ataque" />
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <select id="atributo-dano-ataque">
-                <option *ngFor="let atributo of atributos">{{ atributo }}</option>
-            </select>
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <input type="number" style="margin-left: 0; width: 2rem; text-align: center;" id="bonus-dano"
-                placeholder="0" />
-        </div>
-        <div class="row">
-            <p>Tipo de dano: </p>
-            <input style="width: 8rem;" placeholder="Concussão" id="tipo-dano-ataque" />
-        </div>
-        <div class="row">
-            <input type="checkbox" id="tem-teste" />
-            <p>Teste de resistência: </p>
-            <select style="margin-left: 0.5rem; margin-right: 0.5rem;" id="atributo-resistido-ataque">
-                <option *ngFor="let resistencia of resistencias">{{resistencia}}</option>
-            </select>
-            <p>vs</p>
-            <input style="width: 2rem; text-align: center;" placeholder="0" id="cd-ataque" />
-        </div>
-        <div class="row">
-            <p>Efeito do teste: </p>
-            <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-ataque" />
-        </div>
-        <div>
-            <p>Descrição: </p>
-            <textarea id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
-        </div>
-        <app-botao-adicionar nomeComponente="ataques" />
-    </div>
+        <app-adicionar-ataque-magia [ehMagia]="false" />
     }
     }
     @case(1){
@@ -98,76 +49,7 @@
     <app-botao-pequeno acao="expandir" nomeComponente="magias" style="margin-left: 1rem;" />
 
     @if(accordion.adicionarMagiaEstaAberto){
-    <div class="accordion">
-        <div class="row">
-            <p>Nome: </p>
-            <input placeholder="Bola de fogo" id="nome-magia" />
-        </div>
-        <div class="row">
-            <p>Nivel da mágia: </p>
-            <select id="nivel-circulo">
-                <option *ngFor="let nivel of niveis">{{nivel}}</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Pontos de magia: </p>
-            <input style="width: 2rem; text-align: center;" placeholder="0" id="custo-pm-magia" />
-        </div>
-        <div class="row">
-            <p>Tempo de execução: </p>
-            <select id="tempo-execucao-magia">
-                <option *ngFor="let custo of custos">{{custo}}</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Alcance: </p>
-            <input style="width: 5rem;" placeholder="30 pés" id="alcance-magia" />
-        </div>
-        <div class="row">
-            <p>Duração: </p>
-            <input style="width: 5rem;" placeholder="1 hora" id="duracao-magia" />
-        </div>
-        <div class="row">
-            <input type="checkbox" id="tem-ataque-magia" />
-            <p>Ataque:</p>
-            <select id="atributo-ataque-magia">
-                <option *ngFor="let atributo of atributos">{{atributo}}</option>
-            </select>
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <input type="number" style="margin-left:0; width: 2rem; text-align: center;" id="bonus-acerto-magia" placeholder="0" />
-        </div>
-        <div class="row">
-            <input type="checkbox" id="tem-dano-magia" />
-            <p>Dano:</p>
-            <select id="atributo-dano-magia">
-                <option *ngFor="let atributo of atributos">{{atributo}}</option>
-            </select>
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <input type="number" style="margin-left:0; width: 2rem; text-align: center;" id="bonus-dano-magia" placeholder="0" />
-        </div>
-        <div class="row">
-            <input type="checkbox" id="tem-teste-magia" />
-            <p>Teste de resistência:</p>
-            <select id="atributo-resistido-magia">
-                <option *ngFor="let atributo of atributos">{{atributo}}</option>
-            </select>
-            <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
-            <input style="margin-left:0; width: 2rem; text-align: center;" id="cd-magia" placeholder="0" />
-        </div>
-        <div class="row">
-            <p>Efeito do teste</p>
-            <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-magia" />
-        </div>
-        <div class="textarea">
-            <p>Descrição: </p>
-            <textarea placeholder="Você atira uma bola de fogo que se espalha por 40 metros..." id="descricao-magia"></textarea>
-        </div>
-        <div class="textarea">
-            <p>Niveis superiores: </p>
-            <textarea placeholder="Investindo 1 ponto de magia na bola de fogo você pode aumentar o alcance dela em..." id="niveis-superiores-magia"></textarea>
-        </div>
-        <app-botao-adicionar nomeComponente="magias" />
-    </div>
+    <app-adicionar-ataque-magia [ehMagia]="true" />
     }
     }
     @case(2){

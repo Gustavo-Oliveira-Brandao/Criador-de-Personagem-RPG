@@ -1,0 +1,88 @@
+<div class="accordion">
+    <div class="row">
+        <p>Nome: </p>
+        <input placeholder="Machado grande" id="nome-ataque" />
+    </div>
+    @if(ehMagia){
+    <div class="row">
+        <p>Nivel da mágia: </p>
+        <select id="nivel-circulo">
+            <option *ngFor="let nivel of niveis">{{nivel}}</option>
+        </select>
+    </div>
+    <div class="row">
+        <p>Pontos de magia: </p>
+        <input style="width: 2rem; text-align: center;" placeholder="0" id="custo-pm-magia" />
+    </div>
+    <div class="row">
+        <p>Tempo de execução: </p>
+        <select id="tempo-execucao-magia">
+            <option *ngFor="let custo of custos">{{custo}}</option>
+        </select>
+    </div>
+    <div class="row">
+        <p>Duração: </p>
+        <input style="width: 5rem;" placeholder="1 hora" id="duracao-magia" />
+    </div>
+    }
+    <div class="row">
+        <p>Alcance: </p>
+        <input style="width: 5rem;" placeholder="30 pés" id="alcance-ataque" />
+    </div>
+    <div class="row">
+        <input checked type="checkbox" id="tem-acerto" />
+        <p>Ataque: </p>
+        <select id="atributo-acerto-ataque">
+            <option *ngFor="let atributo of atributos">{{ atributo }}</option>
+        </select>
+        <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+        <input type="number" style="width: 2rem; margin-left: 0; text-align: center;" id="bonus-acerto"
+            placeholder="0" />
+    </div>
+    <div class="row">
+        <input checked type="checkbox" id="tem-dano" />
+        <p>Dano: </p>
+        <input style="width: 3rem;" placeholder="1d12" id="dano-ataque" />
+        <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+        <select id="atributo-dano-ataque">
+            <option *ngFor="let atributo of atributos">{{ atributo }}</option>
+        </select>
+        <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
+        <input type="number" style="margin-left: 0; width: 2rem; text-align: center;" id="bonus-dano" placeholder="0" />
+    </div>
+    <div class="row">
+        <p>Tipo de dano: </p>
+        <input style="width: 8rem;" placeholder="Concussão" id="tipo-dano-ataque" />
+    </div>
+    <div class="row">
+        <input type="checkbox" id="tem-teste" />
+        <p>Teste de resistência: </p>
+        <select style="margin-left: 0.5rem; margin-right: 0.5rem;" id="atributo-resistido-ataque">
+            <option *ngFor="let resistencia of resistencias">{{resistencia}}</option>
+        </select>
+        <p>vs</p>
+        <input style="width: 2rem; text-align: center;" placeholder="0" id="cd-ataque" />
+    </div>
+    <div class="row">
+        <p>Efeito do teste: </p>
+        <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-ataque" />
+    </div>
+    <div>
+        <p>Descrição: </p>
+        <textarea id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
+    </div>
+    @if(ehMagia){
+    <div class="textarea">
+        <p>Niveis superiores: </p>
+        <textarea placeholder="Investindo 1 ponto de magia na bola de fogo você pode aumentar o alcance dela em..."
+            id="niveis-superiores-magia"></textarea>
+    </div>
+    }
+
+    @if(!ehMagia){
+    <app-botao-adicionar nomeComponente="ataques" />
+    }
+    @if(ehMagia){
+        <app-botao-adicionar nomeComponente="magias" />
+    }
+</div>
