@@ -1,7 +1,7 @@
 .card {
     border-radius: 10px;
     width: 33rem;
-    height: 44.5rem;
+    height: 44rem;
     overflow:auto;
 
     .nav-row {
@@ -9,6 +9,7 @@
         display: flex;
         align-items: center;
         position: relative;
+        margin-bottom: 1rem;
 
         .aba {
             display: flex;
@@ -18,9 +19,14 @@
             width: 10rem;
             cursor: pointer;
 
+            h2{
+                font-size: 15px;
+                margin: 0;
+            }
+
             img {
-                width: 2rem;
-                height: 2rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 margin-right: 1rem;
             }
 
@@ -29,7 +35,7 @@
         i {
             cursor: pointer;
             position: absolute;
-            font-size: 25px;
+            font-size: 20px;
             color: white;
         }
 
@@ -46,31 +52,35 @@
         overflow-y: auto;
         .titulo-nivel{
             margin-left: 1rem;
-            text-decoration: underline;
-            text-transform: uppercase;
         }
         .accordion {
-            background-color: var(--cor-secundaria);
+            border: 1px solid rgba(128, 128, 128, 0.308);
             border-radius: 10px;
             padding: 1rem;
-            width: 90%;
+            width: 85%;
             margin: 0 auto 1rem auto;
 
             .row {
                 display: flex;
                 align-items: center;
 
+                p{
+                    font-size: 12px;
+                }
+
                 input {
                     margin-left: 1rem;
                     background-color: transparent;
                     border: none;
                     border-bottom: var(--borda);
+                    font-size: 12px;
                 }
 
                 select {
                     margin-left: 1rem;
-                    background-color: var(--cor-secundaria);
+                    background-color: var(--cor-cards);
                     border: none;
+                    font-size: 12px;
                 }
 
                 select:hover {

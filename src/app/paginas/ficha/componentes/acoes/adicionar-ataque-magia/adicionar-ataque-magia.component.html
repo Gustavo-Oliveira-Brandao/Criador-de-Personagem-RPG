@@ -36,7 +36,7 @@
         <input style="width: 5rem;" placeholder="30 pés" id="alcance-ataque" />
     </div>
     <div class="row">
-        <input checked type="checkbox" id="tem-acerto" />
+        <input type="checkbox" id="tem-acerto" />
         <p>Ataque: </p>
         <select id="atributo-acerto-ataque">
             <option *ngFor="let atributo of atributos">{{ atributo }}</option>
@@ -46,7 +46,7 @@
             placeholder="0" />
     </div>
     <div class="row">
-        <input checked type="checkbox" id="tem-dano" />
+        <input type="checkbox" id="tem-dano" />
         <p>Dano: </p>
         <input style="width: 3rem;" placeholder="1d12" id="dano-ataque" />
         <p style="margin-left: 0.5rem; margin-right: 0.5rem;">+</p>
@@ -79,13 +79,13 @@
         <input style="width: 8rem;" placeholder="Metade do dano" id="efeito-teste-ataque" />
     </div>
     <div>
-        <p>Descrição: </p>
-        <textarea id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
+        <p style="font-size: 13px;">Descrição: </p>
+        <textarea style="font-size: 13px;" id="descricao-ataque" placeholder="Atinge até quatro criaturas a 5 metros..."></textarea>
     </div>
     @if(ehMagia){
     <div class="textarea">
-        <p>Niveis superiores: </p>
-        <textarea placeholder="Investindo 1 ponto de magia na bola de fogo você pode aumentar o alcance dela em..."
+        <p style="font-size: 13px;">Niveis superiores: </p>
+        <textarea style="font-size: 13px;" placeholder="Investindo 1 ponto de magia na bola de fogo você pode aumentar o alcance dela em..."
             id="niveis-superiores-magia"></textarea>
     </div>
     }

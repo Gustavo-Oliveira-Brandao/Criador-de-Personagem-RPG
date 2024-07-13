@@ -1,6 +1,6 @@
 .accordion {
-    background-color: var(--cor-secundaria);
-    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.308);
+    border-radius: 10px 0 10px 0;
     padding: 1rem;
     width: 90%;
     margin: 0 auto 1rem auto;
@@ -9,7 +9,11 @@
         display: flex;
         align-items: center;
 
+        p{
+            font-size: 12px;
+        }
         input {
+            font-size: 12px;
             margin-left: 1rem;
             background-color: transparent;
             border: none;
@@ -17,8 +21,9 @@
         }
 
         select {
+            font-size: 12px;
             margin-left: 1rem;
-            background-color: var(--cor-secundaria);
+            background-color: var(--cor-cards);
             border: none;
         }
 

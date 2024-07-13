@@ -1,12 +1,11 @@
 <div (click)="expandir()" class="magia">
-    <p style="color: var(--cor-destaque);">{{magia.nome}}</p>
-    <app-botao-pequeno acao="deletar" nomeComponente="magias" [nivelMagia]="magia.nivelMagia" />
+    <p>{{magia.nome}}</p>
+    <app-botao-pequeno acao="deletar" nomeComponente="magias" [nivel]="magia.nivelMagia" [index]="index" />
 </div>
 
 @if(magiaEstaExpandida){
 <div class="magia-card">
-    <div style="display: flex; justify-content: space-between;">
-        <p class="titulo">{{magia.nome}}</p>
+    <div>
         <p style="font-weight: bold;">{{magia.nivelMagia}}º nivel @if(magia.atributoAcerto != 'Sem atributo'){ -
             {{magia.atributoAcerto}} }</p>
     </div>
@@ -54,5 +53,4 @@
     </div>
 
 </div>
-
 }

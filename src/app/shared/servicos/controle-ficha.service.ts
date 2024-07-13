@@ -32,7 +32,7 @@ export class ControleFichaService {
     }
   }
 
-  deletarItem(nomeComponente: string, index: number) {
+  deletarItem(nomeComponente: string, index: number, nivel?: any) {
     if (nomeComponente == "proficiencia") {
       this.personagem.removerProficiencia(index)
     }
@@ -41,6 +41,9 @@ export class ControleFichaService {
     }
     if (nomeComponente == "inventario") {
       this.personagem.removerItemInventario(index)
+    }
+    if (nomeComponente == "magias"){
+      this.personagem.removerMagia(index, nivel)
     }
   }
 

@@ -1,11 +1,11 @@
 button {
     cursor: pointer;
-    background-color: var(--cor-secundaria);
+    background-color: transparent;
     border: none;
     width: 2rem;
     height: 2rem;
     border-radius: 6px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 button:hover {

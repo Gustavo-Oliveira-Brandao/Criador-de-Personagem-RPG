@@ -21,18 +21,21 @@
     }
 
     .nome{
-        background-color: var(--cor-secundaria);
+        border: 1px solid rgba(128, 128, 128, 0.308);
+        border-radius: 10px 0 10px 0;
         width: 30%;
     }
 
     .acerto{
-        background-color: var(--cor-secundaria);
+        border: 1px solid rgba(128, 128, 128, 0.308);
+        border-radius: 10px 0 10px 0;
         width: 10%;
         text-align: center;
     }
 
     .dano{
-        background-color: var(--cor-secundaria);
+        border: 1px solid rgba(128, 128, 128, 0.308);
+        border-radius: 10px 0 10px 0;
         width: 35%;
     }
 

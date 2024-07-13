@@ -4,7 +4,7 @@
   --cor-secundaria: #313a47;
   --cor-destaque: #f75a68;
   --cor-fonte: #fff;
-  --fonte: "Almendra", serif;
+  --fonte: "Poppins", sans-serif;
   --borda: 1px solid gray;
 }
 
@@ -18,6 +18,9 @@ body {
   background: url("assets/background.png");
 }
 
+input, p{
+  font-size: 12px;
+}
 input[type="checkbox"] {
   margin-left: 0 !important;
   margin-right: 0.5rem !important;
@@ -39,6 +42,7 @@ textarea {
   width: 95%;
   padding: 6px 10px;
   margin-bottom: 1rem;
+  font-size: 12px;
 }
 
 h1,

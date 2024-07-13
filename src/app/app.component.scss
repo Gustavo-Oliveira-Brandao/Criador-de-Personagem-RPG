@@ -9,15 +9,14 @@ app-atributos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 700px;
-    margin: 0 2rem 2rem 1.5rem;
+    margin: 0 1.5rem 2rem 1.5rem;
 }
 
 .pericias{
-    margin-left: 1.5rem;
-    width: 700px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;    
     display: flex;
-    justify-content: space-between;
+
 }
 
 .acoes-inventario{
@@ -26,5 +25,5 @@ app-atributos{
 }
 
 app-acoes{
-    margin-right: 2rem;
+    margin-right: 1.5rem;
 }

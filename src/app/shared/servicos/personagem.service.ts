@@ -414,20 +414,20 @@ export class PersonagemService {
     console.log(this.acoes.magias)
   }
 
-  removerMagia(index: number, nivel: number) {
-    if (nivel == 1) {
+  removerMagia(index: number, nivel: any) {
+    if (nivel == "1") {
       this.acoes.magias.nivel1.splice(index, 1)
     }
-    if (nivel == 2) {
+    if (nivel == "2") {
       this.acoes.magias.nivel2.splice(index, 1)
     }
-    if (nivel == 3) {
+    if (nivel == "3") {
       this.acoes.magias.nivel3.splice(index, 1)
     }
-    if (nivel == 4) {
+    if (nivel == "4") {
       this.acoes.magias.nivel4.splice(index, 1)
     }
-    if (nivel == 5) {
+    if (nivel == "5") {
       this.acoes.magias.nivel5.splice(index, 1)
     }
   }

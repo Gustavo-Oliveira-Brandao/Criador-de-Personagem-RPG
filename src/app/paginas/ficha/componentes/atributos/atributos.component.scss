@@ -1,7 +1,7 @@
 div {
     position: relative;
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -23,16 +23,16 @@ div {
   }
 
   .atributo {
-    bottom: -1rem;
-    width: 3rem;
+    bottom: -0.8rem;
+    width: 2.5rem;
     border-radius: 30px;
     border: 1px solid var(--cor-secundaria);
 
     input {
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       width: 2rem;
-      height: 2rem;
+      height: 1.5rem;
       background-color: transparent;
       border: none;
     }

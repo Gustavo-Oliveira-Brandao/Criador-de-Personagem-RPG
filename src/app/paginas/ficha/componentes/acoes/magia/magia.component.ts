@@ -17,4 +17,5 @@ export class MagiaComponent {
   }
 
   @Input() public magia: any
+  @Input() public index: any
 }

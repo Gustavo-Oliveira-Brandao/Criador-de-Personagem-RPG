@@ -16,6 +16,7 @@ export class BotaoPequenoComponent {
   @Input() public nomeComponente: string;
   @Input() public acao: string;
   @Input() public index: number;
+  @Input() public nivel: number;
 
   abrirMenu(nomeComponente: string) {
     if(nomeComponente == 'proficiencia'){

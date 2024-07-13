@@ -1,7 +1,7 @@
 .card {
     width: 19rem;
     height: 23.9rem;
-    padding: 1rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
     border-radius: 10px;
     margin-right: 1.5rem;
     margin-bottom: 1rem;
@@ -21,9 +21,12 @@
     }
 
     .menu {
-        background-color: var(--cor-secundaria);
+        border: 1px solid rgba(128, 128, 128, 0.308);
         border-radius: 15px;
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
 
         .titulo {
             font-weight: bold;
@@ -35,9 +38,16 @@
         display: flex;
         align-items: center;
 
+        p{
+            font-size: 13px;
+        }
+        input{
+            font-size: 13px;
+        }
+
         .tipo {
             margin-left: 1rem;
-            background-color: var(--cor-secundaria);
+            background-color: transparent;
             border: none;
             width: 8rem;
             height: 1.5rem;
@@ -50,9 +60,10 @@
 
         .descricao {
             margin-left: 1rem;
-            background-color: var(--cor-secundaria);
+            background-color: transparent;
             border: none;
-            border-bottom: 1px solid #fff;
+            width: 7rem;
+            border-bottom: 1px solid gray;
         }
     }
 }

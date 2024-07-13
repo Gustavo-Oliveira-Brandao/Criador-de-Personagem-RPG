@@ -4,11 +4,10 @@
         @for(proficiencia of proficiencias.proficiencias; track $index; ){
         <div class="proficiencia">
             <app-proficiencia [proficiencia]="proficiencia" />
-            <app-botao-pequeno style="position: absolute; top: 0; right: 0;" nomeComponente="proficiencia" acao="deletar" [index]="$index" />
         </div>
         }
     </div>
-    <app-botao-pequeno nomeComponente="proficiencia" acao="expandir" />
+    <app-botao-pequeno style="margin-left: 1rem;" nomeComponente="proficiencia" acao="expandir" />
     @if(accordion.adicionarProficienciaEstaAberto){
     <div class="menu">
         <p class="titulo">Adicionar proficiência</p>
@@ -20,7 +19,7 @@
         </div>
         <div class="row">
             <p>Descrição: </p>
-            <input class="descricao" id="descricao-proficiencia" />
+            <input placeholder="Leves e médias" class="descricao" id="descricao-proficiencia" />
         </div>
         <app-botao-adicionar nomeComponente="proficiencia" />
     </div>

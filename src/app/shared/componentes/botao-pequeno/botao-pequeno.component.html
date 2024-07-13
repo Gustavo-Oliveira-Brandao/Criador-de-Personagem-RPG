@@ -3,10 +3,11 @@
 }
 @if(acao == "deletar"){
 @if(nomeComponente == "magias"){
-
+<button class="delete" (click)="controleFicha.deletarItem(nomeComponente, index, nivel)"><i
+                class="fa-solid fa-trash"></i></button>
 }
 @else{
 <button class="delete" (click)="controleFicha.deletarItem(nomeComponente, index)"><i
-        class="fa-solid fa-trash"></i></button>
+                class="fa-solid fa-trash"></i></button>
 }
 }
